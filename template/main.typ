@@ -9,7 +9,7 @@
   // Optional Styling
   ratio: 16/9,
   layout: "medium",
-  title-color: green.darken(40%),
+  title-color: green.darken(60%),
   footer: true,
   counter: true,
 )
