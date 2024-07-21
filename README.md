@@ -14,7 +14,7 @@ Example Presentation
 
 | Title Slide                                     | Section                                             | Content                                         | Outline                                         |
 | ----------------------------------------------- | --------------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
-| ![Example-Title](screenshots/Example-Title.png) | ![Example-Section](screenshots/Example-Section.png) | ![Example-Slide](screenshots/Example-Slide.png) | ![Example-Section](screenshots/Example-TOC.png) |
+| ![Example-Title](screenshots/Example-Title.jpg) | ![Example-Section](screenshots/Example-Section.jpg) | ![Example-Slide](screenshots/Example-Slide.jpg) | ![Example-Section](screenshots/Example-TOC.jpg) |
 
 can be found in `example/example.typ`in the GitHub Repo
 
@@ -28,7 +28,7 @@ To start a presentation, initialize it in your typst document:
   title: "Diatypst", // Required
   subtitle: "easy slides in typst",
   date: "01.07.2024",
-  authors: ("Marten Walk"),
+  authors: ("John Doe"),
 )
 ...
 ```
@@ -47,11 +47,7 @@ Then, insert your content.
 
 == First Slide
 
-Terms created with ```typc / Term: Definition```
-
-/ *Term*: Definition
-
-A code block
+#lorem(20)
 ```
 
 ## Options
