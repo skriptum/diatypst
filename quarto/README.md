@@ -1,4 +1,0 @@
-# Diatypst Extension for Quarto
-
-
-

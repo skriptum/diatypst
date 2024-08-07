@@ -4,11 +4,7 @@ author: Author Name
 date: 01.07.2024
 subtitle: easy slides in typst
 format:
-  diatypst-typst: 
-    author: "Author Name"
-    title: "Diatypst"
-    date: "01.07.2024"
-    subtitle: "easy slides in typst"
+  diatypst-typst: default
 ---
 
 # First Section
