@@ -1,0 +1,31 @@
+---
+title: Untitled
+author: Author Name
+date: 01.07.2024
+subtitle: easy slides in typst
+format:
+  diatypst-typst: 
+    author: "Author Name"
+    title: "Diatypst"
+    date: "01.07.2024"
+    subtitle: "easy slides in typst"
+---
+
+# First Section
+
+## First Slide
+
+This is the first slide. After here comes a Term and its Definition.
+
+Term 
+  ~ Definition
+
+Now some code 
+
+```python
+print("Hello World")
+```
+
+## Second Slide
+
+This is the second slide.
