@@ -1,4 +1,4 @@
-#import "@preview/diatypst:0.1.0": *
+#import "@preview/diatypst:0.2": *
 
 #show: slides.with(
   title: "Diatypst", // Required
@@ -12,6 +12,7 @@
   title-color: green.darken(60%),
   footer: true,
   counter: true,
+  toc: true,
 )
 
 #outline()

@@ -65,6 +65,8 @@ all available Options to initialize the template with
 | *title-color* | Color to base the Elements of the Presentation on            | `blue.darken(50%)`   |
 | *counter*     | whether to display the dots for pages in upper right corner  | `true`               |
 | *footer*      | whether to display the footer at the bottom                  | `true`               |
+| *toc*         | whether to display the table of contents                     | `true`               |
+| *code-styling*| whether to style code elements in the presentation           | `true`               |
 
 
 
