@@ -15,6 +15,8 @@
   title-color: none,
   counter: true,
   footer: true,
+  toc: true
+  code-styling: true
 ) = {
 
   // Parsing
@@ -122,13 +124,6 @@
     footer-descent:0.8em,
   )
 
-  // Outline
-  set outline(
-    // target: heading.where(level: 1),
-    indent: true,
-    title: "Table of Contents"
-  )
-  show outline: set heading(level: 2)
   
   set bibliography(
     title: none
@@ -191,15 +186,17 @@
     )
   }
 
-  show raw.where(block: false): it => {
-    box(fill: body-color.lighten(40%), inset: 1pt, radius: 1pt, baseline: 1pt)[#text(size:8pt ,it)]
-  }
+  if (code-styling == true) {
+    show raw.where(block: false): it => {
+      box(fill: body-color.lighten(40%), inset: 1pt, radius: 1pt, baseline: 1pt)[#text(size:8pt ,it)]
+    }
 
-  show raw.where(block: true): it => { 
-    block(radius: 0.5em, fill: body-color.lighten(40%), 
-          width: 100%, inset: 1em, it)
-  }
+    show raw.where(block: true): it => { 
+      block(radius: 0.5em, fill: body-color.lighten(40%), 
+            width: 100%, inset: 1em, it)
+    }
 
+  }
   show list: set list(marker: (
     text(fill: title-color)[•],
     text(fill: title-color)[‣],
@@ -219,6 +216,18 @@
 
   set table.hline(stroke: 0.4pt+black)
   set table.vline(stroke: 0.4pt)
+
+  // Outline
+  set outline(
+    // target: heading.where(level: 1),
+    indent: true,
+  )
+  show outline: set heading(level: 2)
+
+  if (toc == true) {
+    outline()
+  }
+
   // Content
   content
 }
