@@ -7,4 +7,5 @@ contributes:
     typst:
       template-partials:
         - typst-show.typ
+        - typst-template.typ
 
