@@ -15,7 +15,7 @@
   title-color: none,
   counter: true,
   footer: true,
-  toc: true
+  toc: true,
   code-styling: true
 ) = {
 
