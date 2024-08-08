@@ -14,24 +14,27 @@
 
 #import "@preview/diatypst:0.1.0": slides
 
-#show: doc => slides.with(
+#show: slides.with(
 $if(title)$
   title: [$title$],
+$endif$
+$if(subtitle)$
+  subtitle: [$subtitle$],
 $endif$
 $if(date)$
   date: [$date$],
 $endif$
 $if(author)$
-  authors: [$author$],
+  authors: "$author$",
 $endif$
 $if(layout)$
-  layout: [$layout$],
+  layout: "$layout$",
 $endif$
 $if(ratio)$
-  ratio: [$ratio$],
+  ratio: float($ratio$),
 $endif$
 $if(title-color)$
-  title-color: [$title-color$],
+  title-color: rgb("#$title-color$"),
 $endif$
 $if(counter)$
   counter: [$counter$],
@@ -39,5 +42,4 @@ $endif$
 $if(footer)$
   footer: [$footer$],
 $endif$
-  doc,
 )
