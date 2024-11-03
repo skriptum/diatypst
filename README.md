@@ -24,6 +24,7 @@ can be found in `example/example.typ`in the GitHub Repo
 To start a presentation, initialize it in your typst document:
 
 ```typst
+#import "@preview/diatypst:0.2.0": *
 #show: slides.with(
   title: "Diatypst", // Required
   subtitle: "easy slides in typst",
@@ -40,8 +41,6 @@ Then, insert your content.
 
 ```typst
 ...
-
-#outline()
 
 = First Section
 
@@ -63,7 +62,7 @@ all available Options to initialize the template with
 | *layout*      | one of "small", "medium", "large", adjusts sizing of the elements on the slides | `"medium"`           |
 | *ratio*       | aspect ratio of the slides, e.g 16/9                         | `4/3`                |
 | *title-color* | Color to base the Elements of the Presentation on            | `blue.darken(50%)`   |
-| *counter*     | whether to display the dots for pages in upper right corner  | `true`               |
+| *count*       | whether to display the dots for pages in upper right corner  | `true`               |
 | *footer*      | whether to display the footer at the bottom                  | `true`               |
 | *toc*         | whether to display the table of contents                     | `true`               |
 | *code-styling*| whether to style code elements in the presentation           | `true`               |
