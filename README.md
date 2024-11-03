@@ -16,8 +16,7 @@ Example Presentation
 | ----------------------------------------------- | --------------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
 | ![Example-Title](screenshots/Example-Title.jpg) | ![Example-Section](screenshots/Example-Section.jpg) | ![Example-Slide](screenshots/Example-Slide.jpg) | ![Example-Section](screenshots/Example-TOC.jpg) |
 
-can be found in `example/example.typ`in the GitHub Repo
-
+These slides can be found in `example/example.typ` in the GitHub Repo
 
 ## Usage
 
@@ -67,7 +66,25 @@ all available Options to initialize the template with
 | *toc*         | whether to display the table of contents                     | `true`               |
 | *code-styling*| whether to style code elements in the presentation           | `true`               |
 
+## Quarto
 
+This template is also available as a Quarto extension. To use it, add it to your project with the following command:
+
+```bash
+quarto add skriptum/diatypst/diaquarto
+```
+
+Then, create a qmd file with the following YAML frontmatter:
+
+```yaml
+title: "Untitled"
+...
+format:
+  diaquarto-typst: 
+    layout: medium # small, medium, large
+    ratio: 16/9 # any ratio possible 
+    title-color: "013220" # Any Hex code for the title color (without #)
+```
 
 ## Inspiration
 

@@ -5,7 +5,7 @@ Extension for Quarto that adds easy slide creation in quarto via the [diatypst p
 To use this extension, download it to your project directory with the following command:
 
 ```bash
-quarto add skriptum/diatypst/quarto
+quarto add skriptum/diatypst/diaquarto
 ```
 
 Then, create a qmd file with the following YAML frontmatter:
