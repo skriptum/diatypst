@@ -9,7 +9,7 @@ repository = "https://github.com/skriptum/Diatypst"
 keywords = ["slides", "presentation", "beamer", "quarto"]
 categories = ["presentation"]
 compiler = "0.12.0"
-exclude = ["screenshots", "example"]
+exclude = ["screenshots", "example", "diaquarto"]
 
 [template]
 path = "template"

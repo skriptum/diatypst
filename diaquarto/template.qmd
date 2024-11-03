@@ -14,7 +14,7 @@ format:
 
 ## First Slide
 
-This is the first slide. After here comes a Term and its Definition.
+This is the first slide. After this comes a Term and its Definition.
 
 Term 
   ~ Definition
@@ -27,7 +27,7 @@ print("Hello World")
 
 ---
 
-BUmmmmmm
+And here the text continues on a new slide, but under the same heading.
 
 ## Second Slide
 
