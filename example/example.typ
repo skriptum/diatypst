@@ -1,13 +1,15 @@
-#import "../src/lib.typ": *
+#import "../lib.typ": *
 
 #show: slides.with(
   title: "Diatypst", // Required
   subtitle: "easy slides in typst",
   date: "01.07.2024",
   authors: ("Marten Walk"),
+  layout: "medium",
+  ratio: 16/9,
+  toc: true, // New Option
+  count: true, // Renamed from counter
 )
-
-#outline()
 
 = First Section
 
@@ -23,8 +25,6 @@ A code block
 // Example Code 
 print("Hello World!")
 ```
-
-a table
 
 
 
