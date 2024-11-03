@@ -13,10 +13,9 @@
   layout: "medium",
   ratio: 4/3,
   title-color: none,
-  counter: true,
+  count: true,
   footer: true,
-  toc: true,
-  code-styling: true
+  toc: true
 ) = {
 
   // Parsing
@@ -60,38 +59,29 @@
           )
         }
     }
-    // Counter
-    #if counter == true {
+    // Count for Page Dots
+    #if count == true {
       v(-space/1.5)
       align(right+top)[
-      // Dots before the current slide
       #context {
-        let before = query(selector(heading).before(here()))
-        for i in before {
-          [
-            #link(i.location())[
-              #box(circle(radius: 0.08cm, fill: fill-color, stroke: 1pt+fill-color)) 
-            ]
+        let last = counter(page).final().first()
+        let current = here().page()
+        // Before the current page
+        for i in range(1,current) {
+          link((page:i, x:0pt,y:0pt))[
+            #box(circle(radius: 0.08cm, fill: fill-color, stroke: 1pt+fill-color)) 
           ]
-        }   
-      }
-      // current slide
-      #context {
-        let current = query(selector(heading).after(here())).first()
-        link(current.location())[
-              #box(circle(radius: 0.08cm, fill: fill-color, stroke: 1pt+fill-color)) 
-            ]
-      }
-      // Dots after current slide
-      #context {
-        let after = query(selector(heading).after(here())).slice(1)
-        for i in after {
-          [
-            #link(i.location())[
-              #box(circle(radius: 0.08cm, stroke: 1pt+fill-color))
-            ]
+        }
+        // Current Page
+        link((page:current, x:0pt,y:0pt))[
+            #box(circle(radius: 0.08cm, fill: fill-color, stroke: 1pt+fill-color)) 
           ]
-        }   
+        // After the current page
+        for i in range(current+1,last+1) {
+          link((page:i, x:0pt,y:0pt))[
+            #box(circle(radius: 0.08cm, stroke: 1pt+fill-color)) 
+          ]
+        }
       }
     ] 
     }
@@ -186,17 +176,15 @@
     )
   }
 
-  if (code-styling == true) {
-    show raw.where(block: false): it => {
-      box(fill: body-color.lighten(40%), inset: 1pt, radius: 1pt, baseline: 1pt)[#text(size:8pt ,it)]
-    }
-
-    show raw.where(block: true): it => { 
-      block(radius: 0.5em, fill: body-color.lighten(40%), 
-            width: 100%, inset: 1em, it)
-    }
-
+  show raw.where(block: false): it => {
+    box(fill: body-color.lighten(40%), inset: 1pt, radius: 1pt, baseline: 1pt)[#text(size:8pt ,it)]
   }
+
+  show raw.where(block: true): it => { 
+    block(radius: 0.5em, fill: body-color.lighten(40%), 
+          width: 100%, inset: 1em, it)
+  }
+
   show list: set list(marker: (
     text(fill: title-color)[•],
     text(fill: title-color)[‣],
