@@ -1,6 +1,20 @@
 # Diaquarto: Diatypst Extension for Quarto
 
-Extension for Quarto that adds easy slide creation in quarto via the [diatypst package](github.com/skriptum/diatypst). 
+*easy slides in quarto/typst*
+
+Features:
+
+- easy delimiter for slides and sections (just use headings)
+- sensible styling
+- dot counter in upper right corner (like LaTeX beamer)
+- adjustable color-theme
+- default show rules for terms, code, lists, ... that match color-theme
+
+Example Presentation
+
+| Title Slide                                     | Section                                             | Content                                         | Outline                                         |
+| ----------------------------------------------- | --------------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| ![Example-Title](screenshots/Example-Title.jpg) | ![Example-Section](screenshots/Example-Section.jpg) | ![Example-Slide](screenshots/Example-Slide.jpg) | ![Example-Section](screenshots/Example-TOC.jpg) |
 
 To use this extension, download it to your project directory with the following command:
 
