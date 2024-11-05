@@ -68,7 +68,7 @@ all available Options to initialize the template with
 
 ## Quarto
 
-This template is also available as a Quarto extension. To use it, add it to your project with the following command:
+This template is also available as a [Quarto](https://quarto.org/) extension. To use it, add it to your project with the following command:
 
 ```bash
 quarto add skriptum/diatypst/diaquarto
