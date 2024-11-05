@@ -7,7 +7,7 @@ format:
   diaquarto-typst: 
     layout: medium # small, medium, large
     ratio: 16/9 # any ratio possible 
-    title-color: "013220" # Hex code for the title color (without #)
+    title-color: "154C79" # Hex code for the title color (without #)
 ---
 
 # First Section
@@ -17,7 +17,7 @@ format:
 This is the first slide. After this comes a Term and its Definition.
 
 Term 
-  ~ Definition
+:  Definition
 
 Now some code 
 
@@ -29,6 +29,13 @@ print("Hello World")
 
 And here the text continues on a new slide, but under the same heading.
 
+- This is 
+- a bulleted list
+- note the color styling of the bullets!
+
+
+
 ## Second Slide
 
 This is the second slide.
+
