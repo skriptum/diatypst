@@ -66,7 +66,6 @@ all available Options to initialize the template with
 | *count*       | whether to display the dots for pages in upper right corner  | `true`               |
 | *footer*      | whether to display the footer at the bottom                  | `true`               |
 | *toc*         | whether to display the table of contents                     | `true`               |
-| *code-styling*| whether to style code elements in the presentation           | `true`               |
 
 ## Quarto
 
