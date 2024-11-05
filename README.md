@@ -48,6 +48,8 @@ Then, insert your content.
 #lorem(20)
 ```
 
+*diatypst* is also available on the [Typst Universe](https://typst.app/universe/package/diatypst) for easy importing into a project on typst.app
+
 ## Options
 
 all available Options to initialize the template with
