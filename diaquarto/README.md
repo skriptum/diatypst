@@ -14,7 +14,7 @@ Example Presentation
 
 | Title Slide                                     | Section                                             | Content                                         | Outline                                         |
 | ----------------------------------------------- | --------------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
-| ![Example-Title](screenshots/Example-Title.jpg) | ![Example-Section](screenshots/Example-Section.jpg) | ![Example-Slide](screenshots/Example-Slide.jpg) | ![Example-Section](screenshots/Example-TOC.jpg) |
+| ![Example-Title](../screenshots/Example-Title.jpg) | ![Example-Section](../screenshots/Example-Section.jpg) | ![Example-Slide](../screenshots/Example-Slide.jpg) | ![Example-Section](../screenshots/Example-TOC.jpg) |
 
 To use this extension, download it to your project directory with the following command:
 
