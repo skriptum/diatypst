@@ -43,3 +43,13 @@ Now you can easily create slides with
 - or a `---` for a new slide
 
 The slides will be rendered in the specified layout and ratio.
+
+
+
+This Format also offers styling adjusted to the title color, e.g in code blocks, terms and bullet lists. To create a Term, use the pandoc term code:
+
+```markdown
+Term
+:  Definition
+```
+
