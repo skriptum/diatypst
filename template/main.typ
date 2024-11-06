@@ -6,13 +6,11 @@
   date: "01.07.2024",
   authors: ("Author Name"),
 
-  // Optional Styling
-  ratio: 16/9,
+  // Optional Styling (for more / explanation see in the typst universe)
+  ratio: 16/9, 
   layout: "medium",
   title-color: blue.darken(60%),
-  footer: true,
-  count: true,
-  toc: true, // Disable to hide table of contents / control the location yourself
+  toc: true, 
 )
 
 = First Section
