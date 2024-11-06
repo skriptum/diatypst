@@ -16,7 +16,7 @@ Example Presentation
 | ----------------------------------------------- | --------------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
 | ![Example-Title](screenshots/Example-Title.jpg) | ![Example-Section](screenshots/Example-Section.jpg) | ![Example-Slide](screenshots/Example-Slide.jpg) | ![Example-Section](screenshots/Example-TOC.jpg) |
 
-These slides can be found in `example/example.typ` in the GitHub Repo
+These example slides and a usage guide are available in the `example` Folder on GitHub as a [.typ file](https://github.com/skriptum/diatypst/blob/main/example/example.typ) and a [compiled PDF](https://github.com/skriptum/diatypst/blob/main/example/example.pdf)
 
 ## Usage
 
@@ -37,6 +37,7 @@ Then, insert your content.
 
 - Level-one headings corresponds to new sections.
 - Level-two headings corresponds to new slides.
+- or manually create a new slide with a `#pagebreak()`
 
 ```typst
 ...
