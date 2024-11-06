@@ -9,13 +9,11 @@
   // Optional Styling
   ratio: 16/9,
   layout: "medium",
-  title-color: green.darken(60%),
+  title-color: blue.darken(60%),
   footer: true,
-  counter: true,
-  toc: true,
+  count: true,
+  toc: true, // Disable to hide table of contents / control the location yourself
 )
-
-#outline()
 
 = First Section
 
