@@ -8,6 +8,8 @@
   content,
   title: none,
   subtitle: none,
+  footer-title: none,
+  footer-subtitle: none,
   date: none,
   authors: (),
   layout: "medium",
@@ -102,10 +104,13 @@
           columns: (1fr, 1fr),
           align: (right,left),
           inset: 4pt,
-          [#smallcaps()[#title]],
-          [ #if subtitle != none {
+          [#smallcaps()[#if footer-title != none {footer-title} else {title}]],
+          [ #if footer-subtitle != none {
+              footer-subtitle
+            } else if subtitle != none {
               subtitle
-            } else if authors != none {
+            }
+              else if authors != none {
                 if (type(authors) != array) {authors = (authors,)}
                 authors.join(", ", last: " and ")
               } else [#date]
