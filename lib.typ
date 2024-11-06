@@ -15,7 +15,7 @@
   title-color: none,
   count: true,
   footer: true,
-  toc: true
+  toc: true,
 ) = {
 
   // Parsing
@@ -29,6 +29,7 @@
   if title-color == none {
       title-color = blue.darken(50%)
   }
+  let block-color = title-color.lighten(90%)
   let body-color = title-color.lighten(80%)
   let header-color = title-color.lighten(65%)
   let fill-color = title-color.lighten(50%)
@@ -39,6 +40,8 @@
     author: authors,
   )
   set heading(numbering: "1.a")
+
+  // PAGE----------------------------------------------
   set page(
     width: width,
     height: height,
@@ -63,29 +66,29 @@
     #if count == true {
       v(-space/1.5)
       align(right+top)[
-      #context {
-        let last = counter(page).final().first()
-        let current = here().page()
-        // Before the current page
-        for i in range(1,current) {
-          link((page:i, x:0pt,y:0pt))[
-            #box(circle(radius: 0.08cm, fill: fill-color, stroke: 1pt+fill-color)) 
-          ]
-        }
-        // Current Page
-        link((page:current, x:0pt,y:0pt))[
-            #box(circle(radius: 0.08cm, fill: fill-color, stroke: 1pt+fill-color)) 
-          ]
-        // After the current page
-        for i in range(current+1,last+1) {
-          link((page:i, x:0pt,y:0pt))[
-            #box(circle(radius: 0.08cm, stroke: 1pt+fill-color)) 
-          ]
-        }
+        #context {
+          let last = counter(page).final().first()
+          let current = here().page()
+          // Before the current page
+          for i in range(1,current) {
+            link((page:i, x:0pt,y:0pt))[
+              #box(circle(radius: 0.08cm, fill: fill-color, stroke: 1pt+fill-color)) 
+            ]
+          }
+          // Current Page
+          link((page:current, x:0pt,y:0pt))[
+              #box(circle(radius: 0.08cm, fill: fill-color, stroke: 1pt+fill-color)) 
+            ]
+          // After the current page
+          for i in range(current+1,last+1) {
+            link((page:i, x:0pt,y:0pt))[
+              #box(circle(radius: 0.08cm, stroke: 1pt+fill-color)) 
+            ]
+          }
+          }
+        ] 
       }
-    ] 
-    }
-  ],
+    ],
     header-ascent: 0%,
     // Footer
     footer: [
@@ -114,12 +117,8 @@
     footer-descent:0.8em,
   )
 
-  
-  set bibliography(
-    title: none
-  )
 
-
+  // SLIDES STYLING--------------------------------------------------
   // Section Slides
   show heading.where(level: 1): x => {
     set page(header: none,footer: none, margin: 0cm)
@@ -133,7 +132,7 @@
       )
 
   }
-  show heading.where(level: 2): pagebreak(weak: true)
+  show heading.where(level: 2): pagebreak(weak: true) // this is where the magic happens
   show heading: set text(1.1em, fill: title-color)
 
   // Title Slide
@@ -166,31 +165,38 @@
   }
 
 
-
-  // Additional Styling (Term, Code)
+  // ADD. STYLING --------------------------------------------------
+  // Terms
   show terms.item: it => {
     set block(width: 100%, inset: 5pt)
     stack(
       block(fill: header-color, radius: (top: 0.2em, bottom: 0cm), strong(it.term)),
-      block(fill: body-color.lighten(20%), radius: (top: 0cm, bottom: 0.2em), it.description),
+      block(fill: block-color, radius: (top: 0cm, bottom: 0.2em), it.description),
     )
   }
 
+  // Code
   show raw.where(block: false): it => {
-    box(fill: body-color.lighten(40%), inset: 1pt, radius: 1pt, baseline: 1pt)[#text(size:8pt ,it)]
+    box(fill: block-color, inset: 1pt, radius: 1pt, baseline: 1pt)[#text(size:8pt ,it)]
   }
 
   show raw.where(block: true): it => { 
-    block(radius: 0.5em, fill: body-color.lighten(40%), 
+    block(radius: 0.5em, fill: block-color, 
           width: 100%, inset: 1em, it)
   }
 
+  // Bullet List
   show list: set list(marker: (
     text(fill: title-color)[•],
     text(fill: title-color)[‣],
     text(fill: title-color)[-],
   ))
 
+  // Enum
+  let color_number(nrs) = text(fill:title-color)[*#nrs.*]
+  set enum(numbering: color_number)
+
+  // Table
   show table: set table(
     stroke: (x, y) => (
       x: none,
@@ -205,6 +211,18 @@
   set table.hline(stroke: 0.4pt+black)
   set table.vline(stroke: 0.4pt)
 
+  // Quote
+  set quote(block: true)
+  show quote.where(block: true): it => {
+    v(-5pt)
+    block(
+      fill: block-color, inset: 5pt, radius: 1pt, 
+      stroke: (left: 3pt+fill-color), width: 100%, 
+      outset: (left:-5pt, right:-5pt, top: 5pt, bottom: 5pt)
+      )[#it]
+    v(-5pt)
+  }
+
   // Outline
   set outline(
     // target: heading.where(level: 1),
@@ -216,6 +234,12 @@
     outline()
   }
 
-  // Content
+  // Bibliography
+  set bibliography(
+    title: none
+  )
+  
+
+  // CONTENT---------------------------------------------
   content
 }
