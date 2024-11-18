@@ -1,8 +1,9 @@
 ---
-title: Untitled
+title: diaquarto 
 author: Author Name
-date: 01.07.2024
+date: "01.11.2024"
 subtitle: easy slides in typst
+toc: true
 format:
   diaquarto-typst: 
     layout: medium # small, medium, large
@@ -10,9 +11,9 @@ format:
     title-color: "154C79" # Hex code for the title color (without #)
 ---
 
-# First Section
+# About *diatypst*
 
-## First Slide
+## Usage
 
 To use this template, add it to your Quarto project with the following command:
 
@@ -40,7 +41,19 @@ Then, insert your content.
 - `---` is used to separate slides.
 
 
-## Second Slide
+## Styling
 
-This is the second slide.
+This is the second slide, we test some more content here
 
+> A blockquote
+
+A table:
+
+| A | B | C |
+|---|---|---|
+| 1 | 2 | 3 |
+
+And finally a 
+
+Term
+: with a Definition

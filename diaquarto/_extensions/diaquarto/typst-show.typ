@@ -12,7 +12,7 @@
 //   - https://typst.app/docs/tutorial/making-a-template/
 //   - https://github.com/typst/templates
 
-#import "@preview/diatypst:0.2.0": slides
+#import "@preview/diatypst:0.3.0": slides
 
 #show: slides.with(
 $if(title)$
@@ -37,9 +37,12 @@ $if(title-color)$
   title-color: rgb("#$title-color$"),
 $endif$
 $if(counter)$
-  counter: [$counter$],
+  count: [$counter$],
 $endif$
-$if(footer)$
-  footer: [$footer$],
-$endif$
+$for(footer)$
+  footer: $footer$,
+$endfor$
+$for(toc)$
+  toc: $toc$,
+$endfor$
 )
