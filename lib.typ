@@ -228,12 +228,23 @@
     v(-5pt)
   }
 
+  // Link
+  show link: it => {
+    if type(it.dest) != str { // Local Links
+      it
+    }
+    else {
+      underline(stroke: 0.5pt+title-color)[#it] // Web Links
+    } 
+  }
+
   // Outline
   set outline(
     // target: heading.where(level: 1),
     indent: true,
   )
-  show outline: set heading(level: 2)
+  
+  show outline: set heading(level: 2) // To not make the TOC heading a section slide by itself
 
   if (toc == true) {
     outline()
