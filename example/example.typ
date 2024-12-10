@@ -7,13 +7,14 @@
   authors: ("Marten Walk"),
   // Optional Style Options
   title-color: blue.darken(50%),
-  ratio: 4/3,
-  layout: "medium",
+  ratio: 4/3, // aspect ratio of the slides, any valid number
+  layout: "medium", // one of "small", "medium", "large"
   toc: true, 
   count: true,
   footer: true,
-  // footer-title: "Custom Title", // Version 0.3.0
-  // footer-subtitle: "Custom Subtitle", // Version 0.3.0
+  // footer-title: "Custom Title", 
+  // footer-subtitle: "Custom Subtitle", 
+  // theme: "full" | one of "normal", "full"
 )
 
 = About _diatypst_

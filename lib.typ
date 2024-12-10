@@ -18,6 +18,7 @@
   count: true,
   footer: true,
   toc: true,
+  theme: "normal"
 ) = {
 
   // Parsing
@@ -26,6 +27,10 @@
   }
   let (height, space) = layouts.at(layout)
   let width = ratio * height
+
+  if theme not in ("normal", "full") {
+      panic("Unknown Theme, valid themes are 'full' and 'normal'")
+  }
 
   // Colors
   if title-color == none {
@@ -48,23 +53,46 @@
     width: width,
     height: height,
     margin: (x: 0.5 * space, top: space, bottom: 0.6 * space),
+  // HEADER
     header: [
       #context {  
         let page = here().page()
         let headings = query(selector(heading.where(level: 2)))
         let heading = headings.rev().find(x => x.location().page() <= page)
+
         if heading != none {
           set align(top)
-          set text(1.4em, weight: "bold", fill: title-color)
-          v(space / 2)
-          block(heading.body +
-            if not heading.location().page() == page [
-              #{numbering("(i)", page - heading.location().page() + 1)}
+          // Colored Style
+          if (theme == "full") {
+            block(
+              width:100%,
+              fill: title-color,
+              height: space*0.85,
+              outset: (x: 0.5 * space)
+            )[
+              #set text(1.4em, weight: "bold", fill: white)
+              #v(space / 2)
+              #heading.body 
+              #if not heading.location().page() == page [
+                 #{numbering("(i)", page - heading.location().page() + 1)}
+               ]
             ]
-          )
+          }
+          // NOrmal Style
+          else if (theme == "normal") {
+            set text(1.4em, weight: "bold", fill: title-color)
+            v(space / 2)
+            block(heading.body +
+              if not heading.location().page() == page [
+                #{numbering("(i)", page - heading.location().page() + 1)}
+              ]
+            )
+          }
+          
         }
+        
     }
-    // Count for Page Dots
+  // COUNTER
     #if count == true {
       v(-space/1.5)
       align(right+top)[
@@ -92,34 +120,74 @@
       }
     ],
     header-ascent: 0%,
-    // Footer
+  // FOOTER
     footer: [
-      #if footer == true {
-        
+      #if footer == true {  
         set text(0.7em)
-        box()[#line(length: 50%, stroke: 2pt+fill-color )]
-        box()[#line(length: 50%, stroke: 2pt+body-color)]
-        v(-0.3cm)
-        grid(
-          columns: (1fr, 1fr),
-          align: (right,left),
-          inset: 4pt,
-          [#smallcaps()[#if footer-title != none {footer-title} else {title}]],
-          [ #if footer-subtitle != none {
-              footer-subtitle
+        // Colored Style
+        if (theme=="full") {
+          columns(2, gutter:0cm)[
+            // Left side of the Footer
+            #align(left)[#block(
+              width: 100%,
+              outset: (left:0.5*space, bottom: 0cm),
+              height: 0.3*space,
+              fill: fill-color,
+              inset: (right:3pt)
+            )[
+              #v(0.1*space)
+              #set align(right)
+              #smallcaps()[#if footer-title != none {footer-title} else {title}]
+              ]
+            ]
+            // Right Side of the Footer
+            #align(right)[#block(
+              width: 100%,
+              outset: (right:0.5*space, bottom: 0cm),
+              height: 0.3*space,
+              fill: body-color,
+              inset: (left: 3pt)
+            )[
+              #v(0.1*space)
+              #set align(left)
+              #if footer-subtitle != none {
+                  footer-subtitle
+              } else if subtitle != none {
+                  subtitle
+              } else if authors != none {
+                    if (type(authors) != array) {authors = (authors,)}
+                    authors.join(", ", last: " and ")
+                  } else [#date]
+            ]
+          ]
+          ]
+        } 
+        // Normal Styling of the Footer
+        else if (theme == "normal") {
+          box()[#line(length: 50%, stroke: 2pt+fill-color )]
+          box()[#line(length: 50%, stroke: 2pt+body-color)]
+          v(-0.3cm)
+          grid(
+            columns: (1fr, 1fr),
+            align: (right,left),
+            inset: 4pt,
+            [#smallcaps()[
+              #if footer-title != none {footer-title} else {title}]],
+            [#if footer-subtitle != none {
+                footer-subtitle
             } else if subtitle != none {
-              subtitle
-            }
-              else if authors != none {
-                if (type(authors) != array) {authors = (authors,)}
-                authors.join(", ", last: " and ")
-              } else [#date]
-          ],
-          
-        )
-    } 
+                subtitle
+            } else if authors != none {
+                  if (type(authors) != array) {authors = (authors,)}
+                  authors.join(", ", last: " and ")
+                } else [#date]
+            ],
+            
+          )
+        }
+      } 
     ],
-    footer-descent:0.8em,
+    footer-descent:0.3*space,
   )
 
 
@@ -139,35 +207,6 @@
   }
   show heading.where(level: 2): pagebreak(weak: true) // this is where the magic happens
   show heading: set text(1.1em, fill: title-color)
-
-  // Title Slide
-  if (title == none) {
-    panic("A title is required")
-  }
-  else {
-    if (type(authors) != array) {
-      authors = (authors,)
-    }
-    set page(footer: none, header: none, margin: 0cm)
-    block(
-      inset: (x:0.5*space, y:1em),
-      fill: title-color,
-      width: 100%,
-      height: 60%,
-      align(bottom)[#text(2.0em, weight: "bold", fill: white, title)]
-    )
-    block(
-      height: 30%,
-      width: 100%,
-      inset: (x:0.5*space,top:0cm, bottom: 1em),
-      if subtitle != none {[
-        #text(1.4em, fill: title-color, weight: "bold", subtitle)
-      ]} + 
-      if subtitle != none and date != none { text(1.4em)[ \ ] } +
-      if date != none {text(1.1em, date)} +
-      align(left+bottom, authors.join(", ", last: " and "))
-    )
-  }
 
 
   // ADD. STYLING --------------------------------------------------
@@ -246,10 +285,6 @@
   
   show outline: set heading(level: 2) // To not make the TOC heading a section slide by itself
 
-  if (toc == true) {
-    outline()
-  }
-
   // Bibliography
   set bibliography(
     title: none
@@ -257,5 +292,40 @@
   
 
   // CONTENT---------------------------------------------
+  // Title Slide
+  if (title == none) {
+    panic("A title is required")
+  }
+  else {
+    if (type(authors) != array) {
+      authors = (authors,)
+    }
+    set page(footer: none, header: none, margin: 0cm)
+    block(
+      inset: (x:0.5*space, y:1em),
+      fill: title-color,
+      width: 100%,
+      height: 60%,
+      align(bottom)[#text(2.0em, weight: "bold", fill: white, title)]
+    )
+    block(
+      height: 30%,
+      width: 100%,
+      inset: (x:0.5*space,top:0cm, bottom: 1em),
+      if subtitle != none {[
+        #text(1.4em, fill: title-color, weight: "bold", subtitle)
+      ]} + 
+      if subtitle != none and date != none { text(1.4em)[ \ ] } +
+      if date != none {text(1.1em, date)} +
+      align(left+bottom, authors.join(", ", last: " and "))
+    )
+  }
+
+  // Outline
+  if (toc == true) {
+    outline()
+  }
+  // Normal Content
   content
+  
 }
