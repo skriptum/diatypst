@@ -16,7 +16,7 @@ Example Presentation
 | ----------------------------------------------- | --------------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
 | ![Example-Title](screenshots/Example-Title.jpg) | ![Example-Section](screenshots/Example-Section.jpg) | ![Example-Slide](screenshots/Example-Slide.jpg) | ![Example-Section](screenshots/Example-TOC.jpg) |
 
-These example slides and a usage guide are available in the `example` Folder on GitHub as a [.typ file](https://github.com/skriptum/diatypst/blob/main/example/example.typ) and a [compiled PDF](https://github.com/skriptum/diatypst/blob/main/example/example.pdf)
+These example slides and a usage guide are available in the `example` Folder on GitHub as a [.typ file](https://github.com/skriptum/diatypst/blob/main/example/example.typ) and a [compiled PDF](https://raw.githubusercontent.com/skriptum/diatypst/refs/heads/main/example/example.pdf)
 
 ## Usage
 
