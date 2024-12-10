@@ -81,7 +81,10 @@ Advanced Styling Options:
   [_count_], [whether to display the dots for pages in upper right corner], [`true`],
   [_footer_], [whether to display the footer at the bottom], [`true`],
   [_toc_], [whether to display the table of contents], [`true`],
+  [_theme_], [one of _normal, full_, adjusts the theme of the slide], [`"normal"`],
 )
+
+The full theme adds more styling to the slides, similar to a a full LaTeX beamer theme.
 
 = Default Styling in diatypst
 

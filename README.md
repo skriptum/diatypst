@@ -12,11 +12,11 @@ Features:
 
 Example Presentation
 
-| Title Slide                                     | Section                                             | Content                                         | Outline                                         |
-| ----------------------------------------------- | --------------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
-| ![Example-Title](screenshots/Example-Title.jpg) | ![Example-Section](screenshots/Example-Section.jpg) | ![Example-Slide](screenshots/Example-Slide.jpg) | ![Example-Section](screenshots/Example-TOC.jpg) |
+| Title Slide                                     | Section                                             | Content (Normal Theme)                          | Content (Full Theme)                                        |
+| ----------------------------------------------- | --------------------------------------------------- | ----------------------------------------------- | ----------------------------------------------------------- |
+| ![Example-Title](screenshots/Example-Title.png) | ![Example-Section](screenshots/Example-Section.png) | ![Example-Slide](screenshots/Example-Slide.png) | ![Example-Full-Slide](./screenshots/Full-Example-Slide.png) |
 
-These example slides and a usage guide are available in the `example` Folder on GitHub as a [.typ file](https://github.com/skriptum/diatypst/blob/main/example/example.typ) and a [compiled PDF](https://raw.githubusercontent.com/skriptum/diatypst/refs/heads/main/example/example.pdf)
+These example slides and a usage guide are available in the `example` Folder on GitHub as a [.typ file](https://github.com/skriptum/diatypst/blob/main/example/example.typ) and a [compiled PDF](https://raw.githubusercontent.com/skriptum/diatypst/refs/heads/main/example/example.pdf). The Full Theme more closely resembles a Beamer Theme, while the normal theme is more reduced.
 
 ## Usage
 
@@ -69,6 +69,7 @@ all available Options to initialize the template with
 | *toc*         | whether to display the table of contents                     | `true`               |
 | *footer-title*| custom text in the footer title (left)                       | same as *title*      |
 | *footer-subtitle*| custom text in the footer subtitle (right)                | same as *subtitle*   |
+| *theme*       | slide theme, either "normal" or "full"                       | `normal`             |
 
 
 ## Quarto
