@@ -1,4 +1,4 @@
-#import "@preview/diatypst:0.3.0": *
+#import "@preview/diatypst:0.4.0": *
 
 #show: slides.with(
   title: "Diatypst", // Required
@@ -7,10 +7,10 @@
   authors: ("Author Name"),
 
   // Optional Styling (for more / explanation see in the typst universe)
-  ratio: 16/9, 
+  ratio: 16/9,
   layout: "medium",
   title-color: blue.darken(60%),
-  toc: true, 
+  toc: true,
 )
 
 = First Section
@@ -20,4 +20,3 @@
 #lorem(20)
 
 / *Term*: Definition
-
