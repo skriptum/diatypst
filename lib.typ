@@ -66,68 +66,63 @@
 
         if heading != none {
           set align(top)
-          // Colored Style
           if (theme == "full") {
             block(
-              width:100%,
+              width: 100%,
               fill: title-color,
-              height: space*0.85,
+              height: space * 0.85,
               outset: (x: 0.5 * space)
             )[
               #set text(1.4em, weight: "bold", fill: white)
               #v(space / 2)
               #heading.body
               #if not heading.location().page() == page [
-                 #{numbering("(i)", page - heading.location().page() + 1)}
-               ]
-            ]
-          }
-          // NOrmal Style
-          else if (theme == "normal") {
-            set text(1.4em, weight: "bold", fill: title-color)
-            v(space / 2)
-            block(heading.body +
-              if not heading.location().page() == page [
                 #{numbering("(i)", page - heading.location().page() + 1)}
               ]
-            )
+            ]
+          } else if (theme == "normal") {
+            set text(1.4em, weight: "bold", fill: title-color)
+            v(space / 2)
+            heading.body
+            if not heading.location().page() == page [
+              #{numbering("(i)", page - heading.location().page() + 1)}
+            ]
           }
-
         }
-
     }
   // COUNTER
     #if count == "dot" {
-      v(-space/1.5)
-      align(right+top)[
-        #context {
-          let last = counter(page).final().first()
-          let current = here().page()
-          // Before the current page
-          for i in range(1,current) {
-            link((page:i, x:0pt,y:0pt))[
-              #box(circle(radius: 0.08cm, fill: fill-color, stroke: 1pt+fill-color))
-            ]
-          }
-          // Current Page
-          link((page:current, x:0pt,y:0pt))[
-              #box(circle(radius: 0.08cm, fill: fill-color, stroke: 1pt+fill-color))
-            ]
-          // After the current page
-          for i in range(current+1,last+1) {
-            link((page:i, x:0pt,y:0pt))[
-              #box(circle(radius: 0.08cm, stroke: 1pt+fill-color))
-            ]
-          }
-        }
-      ]
-    } else if count == "number" {
       v(-space / 1.5)
-      set align(right + horizon)
+      set align(right + top)
       context {
         let last = counter(page).final().first()
         let current = here().page()
-        set text(weight: "bold", fill: white)
+        // Before the current page
+        for i in range(1,current) {
+          link((page:i, x:0pt,y:0pt))[
+            #box(circle(radius: 0.08cm, fill: fill-color, stroke: 1pt+fill-color))
+          ]
+        }
+        // Current Page
+        link((page:current, x:0pt,y:0pt))[
+            #box(circle(radius: 0.08cm, fill: fill-color, stroke: 1pt+fill-color))
+          ]
+        // After the current page
+        for i in range(current+1,last+1) {
+          link((page:i, x:0pt,y:0pt))[
+            #box(circle(radius: 0.08cm, stroke: 1pt+fill-color))
+          ]
+        }
+      }
+    } else if count == "number" {
+      v(-space / 1.5)
+      set align(right + top)
+      context {
+        let last = counter(page).final().first()
+        let current = here().page()
+        set text(weight: "bold")
+        set text(fill: white) if theme == "full"
+        set text(fill: title-color) if theme == "normal"
         [#current / #last]
       }
     }

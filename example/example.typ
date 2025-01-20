@@ -14,7 +14,7 @@
   footer: true,
   // footer-title: "Custom Title",
   // footer-subtitle: "Custom Subtitle",
-  // theme: "full" | one of "normal", "full"
+  // theme: "full", // one of "normal", "full"
 )
 
 = About _diatypst_
