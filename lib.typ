@@ -15,7 +15,7 @@
   layout: "medium",
   ratio: 4/3,
   title-color: none,
-  count: true,
+  count: "dot",
   footer: true,
   toc: true,
   theme: "normal"
@@ -27,6 +27,10 @@
   }
   let (height, space) = layouts.at(layout)
   let width = ratio * height
+
+  if count not in (none, "dot", "number") {
+    panic("Unknown Count, valid counts are 'dot' and 'number', or none")
+  }
 
   if theme not in ("normal", "full") {
       panic("Unknown Theme, valid themes are 'full' and 'normal'")
@@ -55,7 +59,7 @@
     margin: (x: 0.5 * space, top: space, bottom: 0.6 * space),
   // HEADER
     header: [
-      #context {  
+      #context {
         let page = here().page()
         let headings = query(selector(heading.where(level: 2)))
         let heading = headings.rev().find(x => x.location().page() <= page)
@@ -72,7 +76,7 @@
             )[
               #set text(1.4em, weight: "bold", fill: white)
               #v(space / 2)
-              #heading.body 
+              #heading.body
               #if not heading.location().page() == page [
                  #{numbering("(i)", page - heading.location().page() + 1)}
                ]
@@ -88,12 +92,12 @@
               ]
             )
           }
-          
+
         }
-        
+
     }
   // COUNTER
-    #if count == true {
+    #if count == "dot" {
       v(-space/1.5)
       align(right+top)[
         #context {
@@ -102,27 +106,36 @@
           // Before the current page
           for i in range(1,current) {
             link((page:i, x:0pt,y:0pt))[
-              #box(circle(radius: 0.08cm, fill: fill-color, stroke: 1pt+fill-color)) 
+              #box(circle(radius: 0.08cm, fill: fill-color, stroke: 1pt+fill-color))
             ]
           }
           // Current Page
           link((page:current, x:0pt,y:0pt))[
-              #box(circle(radius: 0.08cm, fill: fill-color, stroke: 1pt+fill-color)) 
+              #box(circle(radius: 0.08cm, fill: fill-color, stroke: 1pt+fill-color))
             ]
           // After the current page
           for i in range(current+1,last+1) {
             link((page:i, x:0pt,y:0pt))[
-              #box(circle(radius: 0.08cm, stroke: 1pt+fill-color)) 
+              #box(circle(radius: 0.08cm, stroke: 1pt+fill-color))
             ]
           }
-          }
-        ] 
+        }
+      ]
+    } else if count == "number" {
+      v(-space / 1.5)
+      set align(right + horizon)
+      context {
+        let last = counter(page).final().first()
+        let current = here().page()
+        set text(weight: "bold", fill: white)
+        [#current / #last]
       }
+    }
     ],
     header-ascent: 0%,
   // FOOTER
     footer: [
-      #if footer == true {  
+      #if footer == true {
         set text(0.7em)
         // Colored Style
         if (theme=="full") {
@@ -161,7 +174,7 @@
             ]
           ]
           ]
-        } 
+        }
         // Normal Styling of the Footer
         else if (theme == "normal") {
           box()[#line(length: 50%, stroke: 2pt+fill-color )]
@@ -182,10 +195,10 @@
                   authors.join(", ", last: " and ")
                 } else [#date]
             ],
-            
+
           )
         }
-      } 
+      }
     ],
     footer-descent:0.3*space,
   )
@@ -224,8 +237,8 @@
     box(fill: block-color, inset: 1pt, radius: 1pt, baseline: 1pt)[#text(size:8pt ,it)]
   }
 
-  show raw.where(block: true): it => { 
-    block(radius: 0.5em, fill: block-color, 
+  show raw.where(block: true): it => {
+    block(radius: 0.5em, fill: block-color,
           width: 100%, inset: 1em, it)
   }
 
@@ -248,7 +261,7 @@
       top: if y == 0 {0.8pt+black} else if y==1 {0.4pt+black} else { 0pt },
     )
   )
-  
+
   show table.cell.where(y: 0): set text(
     style: "normal", weight: "bold") // for first / header row
 
@@ -260,8 +273,8 @@
   show quote.where(block: true): it => {
     v(-5pt)
     block(
-      fill: block-color, inset: 5pt, radius: 1pt, 
-      stroke: (left: 3pt+fill-color), width: 100%, 
+      fill: block-color, inset: 5pt, radius: 1pt,
+      stroke: (left: 3pt+fill-color), width: 100%,
       outset: (left:-5pt, right:-5pt, top: 5pt, bottom: 5pt)
       )[#it]
     v(-5pt)
@@ -274,7 +287,7 @@
     }
     else {
       underline(stroke: 0.5pt+title-color)[#it] // Web Links
-    } 
+    }
   }
 
   // Outline
@@ -282,14 +295,14 @@
     // target: heading.where(level: 1),
     indent: true,
   )
-  
+
   show outline: set heading(level: 2) // To not make the TOC heading a section slide by itself
 
   // Bibliography
   set bibliography(
     title: none
   )
-  
+
 
   // CONTENT---------------------------------------------
   // Title Slide
@@ -314,7 +327,7 @@
       inset: (x:0.5*space,top:0cm, bottom: 1em),
       if subtitle != none {[
         #text(1.4em, fill: title-color, weight: "bold", subtitle)
-      ]} + 
+      ]} +
       if subtitle != none and date != none { text(1.4em)[ \ ] } +
       if date != none {text(1.1em, date)} +
       align(left+bottom, authors.join(", ", last: " and "))
@@ -327,5 +340,5 @@
   }
   // Normal Content
   content
-  
+
 }
