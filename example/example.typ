@@ -9,19 +9,19 @@
   title-color: blue.darken(50%),
   ratio: 4/3, // aspect ratio of the slides, any valid number
   layout: "medium", // one of "small", "medium", "large"
-  toc: true, 
-  count: true,
+  toc: true,
+  count: "dot", // one of "dot", "number", or none
   footer: true,
-  // footer-title: "Custom Title", 
-  // footer-subtitle: "Custom Subtitle", 
-  // theme: "full" | one of "normal", "full"
+  // footer-title: "Custom Title",
+  // footer-subtitle: "Custom Subtitle",
+  // theme: "full", // one of "normal", "full"
 )
 
 = About _diatypst_
 
 == General
 
-_diatypst_ is a simple slide generator for _typst_. 
+_diatypst_ is a simple slide generator for _typst_.
 
 Features:
 
@@ -78,7 +78,7 @@ Advanced Styling Options:
   [_layout_], [one of _small, medium, large_, adjusts sizing of the elements on the slides], [`"medium"`],
   [_ratio_], [aspect ratio of the slides, e.g., 16/9], [`4/3`],
   [_title-color_], [Color to base the Elements of the Presentation on], [`blue.darken(50%)`],
-  [_count_], [whether to display the dots for pages in upper right corner], [`true`],
+  [_count_], [one of _dot, number, none_, adjusts the style of page counter in the right corner], [`"dot"`],
   [_footer_], [whether to display the footer at the bottom], [`true`],
   [_toc_], [whether to display the table of contents], [`true`],
   [_theme_], [one of _normal, full_, adjusts the theme of the slide], [`"normal"`],
@@ -97,7 +97,7 @@ _diatypst_ defines some default styling for elements, e.g Terms created with ```
 A code block like this
 
 ```python
-// Example Code 
+// Example Code
 print("Hello World!")
 ```
 
@@ -154,13 +154,13 @@ For more information, visit the #link("www.github.com/skriptum/diatypst")[diatyp
 
 For Issues and Feature Requests, please use the GitHub Repo.
 
-To find the source code for this presentation, visit the #link("https://github.com/skriptum/diatypst/tree/main/example")[example folder on GitHub]. An minimal template can also be #link("https://github.com/skriptum/diatypst/blob/main/template/main.typ")[found here]  
+To find the source code for this presentation, visit the #link("https://github.com/skriptum/diatypst/tree/main/example")[example folder on GitHub]. An minimal template can also be #link("https://github.com/skriptum/diatypst/blob/main/template/main.typ")[found here]
 
 == Inspiration
 
 this template is inspired by #link("https://github.com/glambrechts/slydst")[slydst], and takes part of the code from it. If you want simpler slides, look here!
 
-The word _diatypst_ is inspired by 
+The word _diatypst_ is inspired by
 
 #columns(2)[
   #image("diaprojektor.jpg", height: 3cm)
@@ -168,7 +168,7 @@ The word _diatypst_ is inspired by
 
   #colbreak()
 
-  #image("diatype.jpg", height: 3cm) 
+  #image("diatype.jpg", height: 3cm)
   and the #link("https://en.wikipedia.org/wiki/Diatype_(machine)")[Diatype] (60s typesetting machine)
 ]
 
