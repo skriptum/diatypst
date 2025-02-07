@@ -8,6 +8,7 @@
   content,
   title: none,
   subtitle: none,
+  logo: none,
   footer-title: none,
   footer-subtitle: none,
   date: none,
@@ -45,12 +46,14 @@
   let header-color = title-color.lighten(65%)
   let fill-color = title-color.lighten(50%)
 
+
   // Setup
   set document(
     title: title,
-    author: authors,
+    author: authors
   )
   set heading(numbering: "1.a")
+  
 
   // PAGE----------------------------------------------
   set page(
@@ -320,13 +323,15 @@
       height: 30%,
       width: 100%,
       inset: (x:0.5*space,top:0cm, bottom: 1em),
-      if subtitle != none {[
-        #text(1.4em, fill: title-color, weight: "bold", subtitle)
-      ]} +
-      if subtitle != none and date != none { text(1.4em)[ \ ] } +
-      if date != none {text(1.1em, date)} +
-      align(left+bottom, authors.join(", ", last: " and "))
-    )
+      grid(columns: (90%,auto),
+        if subtitle != none {[
+          #text(1.4em, fill: title-color, weight: "bold", subtitle)
+        ]} +
+        if subtitle != none and date != none { text(1.4em)[ \ ] } +
+        if date != none {text(1.4em, date)} +
+        align(left+bottom, authors.join(", ", last: " & ")),
+        if logo != none {align(right, logo)}
+    ))
   }
 
   // Outline
