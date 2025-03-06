@@ -288,7 +288,7 @@
   // Outline
   set outline(
     // target: heading.where(level: 1),
-    indent: true,
+    indent: auto,
   )
 
   show outline: set heading(level: 2) // To not make the TOC heading a section slide by itself
