@@ -325,7 +325,7 @@
       ]} +
       if subtitle != none and date != none { text(1.4em)[ \ ] } +
       if date != none {text(1.1em, date)} +
-      align(left+bottom, authors.join(", ", last: " and "))
+      align(left+bottom, authors.join(", ", last: " & "))
     )
   }
 
