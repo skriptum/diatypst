@@ -231,7 +231,7 @@
 
   // Code
   show raw.where(block: false): it => {
-    box(fill: block-color, inset: 1pt, radius: 1pt, baseline: 1pt)[#text(size:8pt ,it)]
+    box(fill: block-color, inset: 1pt, radius: 1pt, baseline: 1pt)[#text(it)]
   }
 
   show raw.where(block: true): it => {
