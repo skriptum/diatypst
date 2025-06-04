@@ -15,6 +15,7 @@
   layout: "medium",
   ratio: 4/3,
   title-color: none,
+  bg-color: gray,
   count: "dot",
   footer: true,
   toc: true,
@@ -54,6 +55,7 @@
 
   // PAGE----------------------------------------------
   set page(
+    fill: bg-color,
     width: width,
     height: height,
     margin: (x: 0.5 * space, top: space, bottom: 0.6 * space),
@@ -73,7 +75,7 @@
               height: space * 0.85,
               outset: (x: 0.5 * space)
             )[
-              #set text(1.4em, weight: "bold", fill: white)
+              #set text(1.4em, weight: "bold", fill: bg-color)
               #v(space / 2)
               #heading.body
               #if not heading.location().page() == page [
@@ -208,7 +210,7 @@
         columns: (1fr, 3fr),
         inset: 10pt,
         align: (right,left),
-        fill: (title-color, white),
+        fill: (title-color, bg-color),
         [#block(height: 100%)],[#text(1.2em, weight: "bold", fill: title-color)[#x]]
       )
 
@@ -314,7 +316,7 @@
       fill: title-color,
       width: 100%,
       height: 60%,
-      align(bottom)[#text(2.0em, weight: "bold", fill: white, title)]
+      align(bottom)[#text(2.0em, weight: "bold", fill: bg-color, title)]
     )
     block(
       height: 30%,

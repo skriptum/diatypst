@@ -64,12 +64,13 @@ all available Options to initialize the template with
 | *layout*      | one of "small", "medium", "large", adjusts sizing of the elements on the slides | `"medium"`           |
 | *ratio*       | aspect ratio of the slides, e.g 16/9                         | `4/3`                |
 | *title-color* | Color to base the Elements of the Presentation on            | `blue.darken(50%)`   |
-| *count*       | page counter style, either "dot", "number", or `none`        | `dot`                |
+| *bg-color*    | Background color of the slides, can be any color             | `white`              |
+| *count*       | page counter style, either "dot", "number", or `none`        | `"dot"`                |
 | *footer*      | whether to display the footer at the bottom                  | `true`               |
 | *toc*         | whether to display the table of contents                     | `true`               |
 | *footer-title*| custom text in the footer title (left)                       | same as *title*      |
 | *footer-subtitle*| custom text in the footer subtitle (right)                | same as *subtitle*   |
-| *theme*       | slide theme, either "normal" or "full"                       | `normal`             |
+| *theme*       | slide theme, either "normal" or "full"                       | `"normal"`             |
 
 
 ## Quarto
