@@ -15,7 +15,7 @@
   layout: "medium",
   ratio: 4/3,
   title-color: none,
-  bg-color: gray,
+  bg-color: white,
   count: "dot",
   footer: true,
   toc: true,
