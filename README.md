@@ -23,7 +23,7 @@ These example slides and a usage guide are available in the `example` Folder on 
 To start a presentation, initialize it in your typst document:
 
 ```typst
-#import "@preview/diatypst:0.2.0": *
+#import "@preview/diatypst:0.6.0": *
 #show: slides.with(
   title: "Diatypst", // Required
   subtitle: "easy slides in typst",
