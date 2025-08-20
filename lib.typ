@@ -15,11 +15,12 @@
   layout: "medium",
   ratio: 4/3,
   title-color: none,
+  first-slide: false,
   bg-color: white,
   count: "dot",
   footer: true,
   toc: true,
-  theme: "normal"
+  theme: "normal",
 ) = {
 
   // Parsing
@@ -174,9 +175,10 @@
         }
         // Normal Styling of the Footer
         else if (theme == "normal") {
+
           box()[#line(length: 50%, stroke: 2pt+fill-color )]
           box()[#line(length: 50%, stroke: 2pt+body-color)]
-          v(-0.3cm)
+          v(-0.33cm)
           grid(
             columns: (1fr, 1fr),
             align: (right,left),
@@ -228,6 +230,7 @@
       block(fill: block-color, radius: (top: 0cm, bottom: 0.2em), it.description),
     )
   }
+
 
   // Code
   show raw.where(block: false): it => {
@@ -305,8 +308,9 @@
   // Title Slide
   if (title == none) {
     panic("A title is required")
-  }
-  else {
+  } else if (title-slide == false) {
+    // Remove the first page for custom arrangements
+  } else {
     if (type(authors) != array) {
       authors = (authors,)
     }

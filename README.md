@@ -23,7 +23,7 @@ These example slides and a usage guide are available in the `example` Folder on 
 To start a presentation, initialize it in your typst document:
 
 ```typst
-#import "@preview/diatypst:0.6.0": *
+#import "@preview/diatypst:0.7.0": *
 #show: slides.with(
   title: "Diatypst", // Required
   subtitle: "easy slides in typst",
@@ -71,6 +71,31 @@ all available Options to initialize the template with
 | *footer-title*| custom text in the footer title (left)                       | same as *title*      |
 | *footer-subtitle*| custom text in the footer subtitle (right)                | same as *subtitle*   |
 | *theme*       | slide theme, either "normal" or "full"                       | `"normal"`             |
+| *first-slide* | whether to include the default title slide                   | `true` |
+
+### Custom Title Slide
+
+For many presentations, it is quite useful to be able to control the appearance of the first slide. diatypst therefore has the option to disable the default title slide (`first-slide: false`) and allow users to create their own. This is a bit more complicated, but gives you more freedom to include logos etc.
+
+To do that, you have to add your custom slide before calling `slides.with`. You need to also adjust the sizing of your custom slide to the ratio and layout you chose. 
+
+```typst
+#import "@preview/diatypst:0.7.0": *
+
+#set page(
+  footer: none, header: none, margin: 0cm,
+  height: 10.5cm // height is either 9cm, 10.5cm or 12cm
+  width: 4/3*10.5cm // width is your height * your ratio
+)
+
+// Custom Title Slide Content goes here
+
+#show: slides.with(
+  ...,
+  first-slide: false,
+  ...
+```
+
 
 
 ## Quarto
