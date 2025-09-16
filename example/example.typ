@@ -15,6 +15,7 @@
   // footer-title: "Custom Title",
   // footer-subtitle: "Custom Subtitle",
   // theme: "full", // one of "normal", "full"
+  // ... see the README for more options
 )
 
 = About _diatypst_
@@ -78,10 +79,12 @@ Advanced Styling Options:
   [_layout_], [one of _small, medium, large_, adjusts sizing of the elements on the slides], [`"medium"`],
   [_ratio_], [aspect ratio of the slides, e.g., 16/9], [`4/3`],
   [_title-color_], [Color to base the Elements of the Presentation on], [`blue.darken(50%)`],
+  [_bg-color_], [Background color of the slides, can be any color], [`white`],
   [_count_], [one of _dot, number, none_, adjusts the style of page counter in the right corner], [`"dot"`],
   [_footer_], [whether to display the footer at the bottom], [`true`],
   [_toc_], [whether to display the table of contents], [`true`],
   [_theme_], [one of _normal, full_, adjusts the theme of the slide], [`"normal"`],
+  [_first-slide_], [whether to include the default title slide], [`true`],
 )
 
 The full theme adds more styling to the slides, similar to a a full LaTeX beamer theme.
