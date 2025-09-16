@@ -23,7 +23,7 @@ These example slides and a usage guide are available in the `example` Folder on 
 To start a presentation, initialize it in your typst document:
 
 ```typst
-#import "@preview/diatypst:0.7.0": *
+#import "@preview/diatypst:0.7.1": *
 #show: slides.with(
   title: "Diatypst", // Required
   subtitle: "easy slides in typst",
@@ -80,7 +80,7 @@ For many presentations, it is quite useful to be able to control the appearance 
 To do that, you have to add your custom slide before calling `slides.with`. You need to also adjust the sizing of your custom slide to the ratio and layout you chose. 
 
 ```typst
-#import "@preview/diatypst:0.7.0": *
+#import "@preview/diatypst:0.7.1": *
 
 #set page(
   footer: none, header: none, margin: 0cm,

@@ -38,7 +38,7 @@ This short presentation is a showcase of the features and options of _diatypst_.
 To start a presentation, initialize it in your typst document:
 
 ```typst
-#import "@preview/diatypst:0.2.0": *
+#import "@preview/diatypst:0.7.1": *
 #show: slides.with(
   title: "Diatypst", // Required
   subtitle: "easy slides in typst",
