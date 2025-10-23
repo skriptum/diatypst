@@ -95,26 +95,76 @@
     }
   // COUNTER
     #if count == "dot" {
-      v(-space / 1.5)
+      v(-space / 1.7)
       set align(right + top)
       context {
         let last = counter(page).final().first()
         let current = here().page()
-        // Before the current page
-        for i in range(1,current) {
-          link((page:i, x:0pt,y:0pt))[
-            #box(circle(radius: 0.08cm, fill: fill-color, stroke: 1pt+fill-color))
-          ]
-        }
-        // Current Page
-        link((page:current, x:0pt,y:0pt))[
-            #box(circle(radius: 0.08cm, fill: fill-color, stroke: 1pt+fill-color))
-          ]
-        // After the current page
-        for i in range(current+1,last+1) {
-          link((page:i, x:0pt,y:0pt))[
-            #box(circle(radius: 0.08cm, stroke: 1pt+fill-color))
-          ]
+
+        if last >= 20 {
+          for i in range(1,20+1) {
+            // Before the current page
+            if i < current {
+              link((page:i, x:0pt,y:0pt))[
+              #box(circle(radius: 0.06cm, fill: fill-color, stroke: 1pt+fill-color))
+              ]
+            }
+            // Current Page
+            else if i == current {
+              link((page:i, x:0pt,y:0pt))[
+                #box(circle(radius: 0.06cm, fill: fill-color, stroke: 1pt+fill-color))
+              ]
+            }
+            // After the current page
+            else {
+              link((page:i, x:0pt,y:0pt))[
+                #box(circle(radius: 0.06cm, stroke: 1pt+fill-color))
+              ]
+            }
+          }
+          v(-space/1.6)
+          linebreak()
+          for i in range(20+1,last+1) {
+            // Before the current page
+            if i < current {
+              link((page:i, x:0pt,y:0pt))[
+              #box(circle(radius: 0.06cm, fill: fill-color, stroke: 1pt+fill-color))
+              ]
+            }
+            // Current Page
+            else if i == current {
+              link((page:i, x:0pt,y:0pt))[
+                #box(circle(radius: 0.06cm, fill: fill-color, stroke: 1pt+fill-color))
+              ]
+            }
+            // After the current page
+            else {
+              link((page:i, x:0pt,y:0pt))[
+                #box(circle(radius: 0.06cm, stroke: 1pt+fill-color))
+              ]
+            }
+          }
+        } else {
+          for i in range(1,last+1) {
+            // Before the current page
+            if i < current {
+              link((page:i, x:0pt,y:0pt))[
+              #box(circle(radius: 0.08cm, fill: fill-color, stroke: 1pt+fill-color))
+              ]
+            }
+            // Current Page
+            else if i == current {
+              link((page:i, x:0pt,y:0pt))[
+                #box(circle(radius: 0.08cm, fill: fill-color, stroke: 1pt+fill-color))
+              ]
+            }
+            // After the current page
+            else {
+              link((page:i, x:0pt,y:0pt))[
+                #box(circle(radius: 0.08cm, stroke: 1pt+fill-color))
+              ]
+            }
+          }
         }
       }
     } else if count == "number" {
