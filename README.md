@@ -84,8 +84,8 @@ To do that, you have to add your custom slide before calling `slides.with`. You 
 
 #set page(
   footer: none, header: none, margin: 0cm,
-  height: 10.5cm // height is either 9cm, 10.5cm or 12cm
-  width: 4/3*10.5cm // width is your height * your ratio
+  height: 10.5cm, // height is either 9cm, 10.5cm or 12cm
+  width: 4/3*10.5cm, // width is your height * your ratio
 )
 
 // Custom Title Slide Content goes here
