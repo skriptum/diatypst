@@ -30,7 +30,7 @@
   let (height, space) = layouts.at(layout)
   let width = ratio * height
 
-  if count not in (none, "dot", "number") {
+  if count not in (none, "dot", "number", "dot-section") {
     panic("Unknown Count, valid counts are 'dot' and 'number', or none")
   }
 
@@ -93,31 +93,150 @@
           }
         }
     }
-  // COUNTER
+  // COUNTER ============================================================
+
     #if count == "dot" {
+    // DOT COUNTER -------------------------
+
+      set align(right + top)
+      context {
+        let last = counter(page).final().first()
+        let current = here().page()
+        let limit = calc.ceil(last/2)
+        // the limit automatically allows to have even rows of dots
+
+        // if number of pages > 20
+        if last > 20 {
+          v(-space / 1.4)
+          // first row of dots
+          for i in range(1,limit+1) {
+            // Before the current page
+            if i <= current {
+              link((page:i, x:0pt,y:0pt))[
+              #box(circle(radius: 0.06cm, fill: fill-color, stroke: 1pt+fill-color))
+              ]
+            }
+            // After the current page
+            else {
+              link((page:i, x:0pt,y:0pt))[
+                #box(circle(radius: 0.06cm, stroke: 1pt+fill-color))
+              ]
+            }
+          }
+          v(-space/1.7)
+          linebreak()
+          // second row of dots
+          for i in range(limit+1,last+1) {
+            // Before the current page
+            if i <= current {
+              link((page:i, x:0pt,y:0pt))[
+              #box(circle(radius: 0.06cm, fill: fill-color, stroke: 1pt+fill-color))
+              ]
+            }
+            // After the current page
+            else {
+              link((page:i, x:0pt,y:0pt))[
+                #box(circle(radius: 0.06cm, stroke: 1pt+fill-color))
+              ]
+            }
+          }
+        } else {
+          // Normal Counter if number of pages < 20
+          v(-space / 1.7)
+          for i in range(1,last+1) {
+            // Before and including the current page
+            if i <= current {
+              link((page:i, x:0pt,y:0pt))[
+              #box(circle(radius: 0.08cm, fill: fill-color, stroke: 1pt+fill-color))
+              ]
+            }
+            // After the current page
+            else {
+              link((page:i, x:0pt,y:0pt))[
+                #box(circle(radius: 0.08cm, stroke: 1pt+fill-color))
+              ]
+            }
+          }
+        }
+      }
+    } else if count == "dot-section" {
+
+      // DOT SECTION COUNTER -------------------------
       v(-space / 1.5)
       set align(right + top)
       context {
         let last = counter(page).final().first()
         let current = here().page()
-        // Before the current page
-        for i in range(1,current) {
-          link((page:i, x:0pt,y:0pt))[
-            #box(circle(radius: 0.08cm, fill: fill-color, stroke: 1pt+fill-color))
-          ]
+
+        // Logic to find the current section
+        let sections = query(heading.where(level: 1,))
+        let current_section_nr = counter(heading).get().at(0)
+        let current_section_page = {
+          if current_section_nr > 0 {
+            sections.at(int(current_section_nr - 1)).location().page()
+          } else {1} // special case for first section (typically outline)
         }
-        // Current Page
-        link((page:current, x:0pt,y:0pt))[
-            #box(circle(radius: 0.08cm, fill: fill-color, stroke: 1pt+fill-color))
+
+        let next_section_page = {
+          if current_section_nr < int(sections.len()) {
+            sections.at(int(current_section_nr)
+              ).location().page()
+          } else {last}
+        }
+
+        // Display the counter for all except last section
+        if next_section_page - current_section_page < 3  {
+          // For sections that only have 1 page leave the counter blank
+          // NOTE: that it also dosnt show a counter if last section < 2 pages
+        } else if current_section_nr < int(sections.len()) {
+          // Current Section Dot
+          link((page:current_section_page, x:0pt,y:0pt))[
+            #box(rotate(-90deg)[#polygon.regular(
+                stroke: 1pt+fill-color, size: 0.2cm, vertices: 3,
+              )]) #h(0.1cm)
           ]
-        // After the current page
-        for i in range(current+1,last+1) {
-          link((page:i, x:0pt,y:0pt))[
-            #box(circle(radius: 0.08cm, stroke: 1pt+fill-color))
+          // Prec and Current Pages Dot
+          for i in range(current_section_page+1,next_section_page) {
+            if i <= current {
+              link((page:i, x:0pt,y:0pt))[
+                #box(circle(radius: 0.08cm, fill: fill-color, stroke: 1pt+fill-color))
+              ]
+            } else {
+              link((page:i, x:0pt,y:0pt))[
+                #box(circle(radius: 0.08cm, stroke: 1pt+fill-color))
+              ]
+            }
+          }
+          // Next Section Dot
+          link((page:next_section_page, x:0pt,y:0pt))[
+            #h(0.1cm) #box(rotate(90deg)[#polygon.regular(
+                stroke: 1pt+fill-color, size: 0.2cm, vertices: 3,
+              )])
           ]
+        } else {
+          // Current Section Dot
+          link((page:current_section_page, x:0pt,y:0pt))[
+            #box(rotate(-90deg)[#polygon.regular(
+                stroke: 1pt+fill-color, size: 0.2cm, vertices: 3,
+              )]) #h(0.1cm)
+          ]
+          // Prec and Current Pages Dot (note that the last slide is included by extending range + 1)
+          for i in range(current_section_page+1,next_section_page+1) {
+            if i <= current {
+              link((page:i, x:0pt,y:0pt))[
+                #box(circle(radius: 0.08cm, fill: fill-color, stroke: 1pt+fill-color))
+              ]
+            } else {
+              link((page:i, x:0pt,y:0pt))[
+                #box(circle(radius: 0.08cm, stroke: 1pt+fill-color))
+              ]
+            }
+          }
         }
       }
+
     } else if count == "number" {
+    // NUMBER COUNTER -------------------------
       v(-space / 1.5)
       set align(right + top)
       context {
@@ -131,7 +250,7 @@
     }
     ],
     header-ascent: 0%,
-  // FOOTER
+  // FOOTER ----------------------------------------------------
     footer: [
       #if footer == true {
         set text(0.7em)
@@ -203,7 +322,7 @@
   )
 
 
-  // SLIDES STYLING--------------------------------------------------
+  // SLIDES STYLING --------------------------------------------------
   // Section Slides
   show heading.where(level: 1): x => {
     set page(header: none,footer: none, margin: 0cm)
