@@ -107,7 +107,7 @@
 
         // if number of pages > 20
         if last > 20 {
-          v(-space / 1.4)
+          v(-space / 1.3)
           // first row of dots
           for i in range(1,limit+1) {
             // Before the current page
@@ -123,7 +123,7 @@
               ]
             }
           }
-          v(-space/1.7)
+          v(-space/1.6)
           linebreak()
           // second row of dots
           for i in range(limit+1,last+1) {
@@ -142,7 +142,7 @@
           }
         } else {
           // Normal Counter if number of pages < 20
-          v(-space / 1.7)
+          v(-space / 1.5)
           for i in range(1,last+1) {
             // Before and including the current page
             if i <= current {

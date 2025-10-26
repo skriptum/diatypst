@@ -16,7 +16,9 @@ Example Presentation
 | ----------------------------------------------- | --------------------------------------------------- | ----------------------------------------------- | ----------------------------------------------------------- |
 | ![Example-Title](screenshots/Example-Title.png) | ![Example-Section](screenshots/Example-Section.png) | ![Example-Slide](screenshots/Example-Slide.png) | ![Example-Full-Slide](./screenshots/Full-Example-Slide.png) |
 
-These example slides and a usage guide are available in the `example` Folder on GitHub as a [.typ file](https://github.com/skriptum/diatypst/blob/main/example/example.typ) and a compiled PDF ([normal Theme](https://raw.githubusercontent.com/skriptum/diatypst/refs/heads/main/example/example.pdf), [full Theme](https://raw.githubusercontent.com/skriptum/diatypst/refs/heads/main/example/example_full.pdf)). The Full Theme more closely resembles a Beamer Theme, while the normal theme is more reduced.
+These example slides and a usage guide are available in the `example` Folder on GitHub as a [.typ file](https://github.com/skriptum/diatypst/blob/main/example/example.typ) and a compiled PDF ([normal Theme](https://raw.githubusercontent.com/skriptum/diatypst/refs/heads/main/example/example.pdf), [full Theme](https://raw.githubusercontent.com/skriptum/diatypst/refs/heads/main/example/example_full.pdf)). 
+
+The Full Theme more closely resembles a Beamer Theme, while the normal theme is a bit simpler (without being boring).
 
 ## Usage
 
@@ -65,13 +67,23 @@ all available Options to initialize the template with
 | *ratio*       | aspect ratio of the slides, e.g 16/9                         | `4/3`                |
 | *title-color* | Color to base the Elements of the Presentation on            | `blue.darken(50%)`   |
 | *bg-color*    | Background color of the slides, can be any color             | `white`              |
-| *count*       | page counter style, either "dot", "number", or `none`        | `"dot"`              |
+| *count*       | page counter style, either "dot", "number", "dot-section", or `none` | `"dot"`              |
 | *footer*      | whether to display the footer at the bottom                  | `true`               |
 | *toc*         | whether to display the table of contents                     | `true`               |
 | *footer-title*| custom text in the footer title (left)                       | same as *title*      |
 | *footer-subtitle*| custom text in the footer subtitle (right)                | same as *subtitle*   |
 | *theme*       | slide theme, either "normal" or "full"                       | `"normal"`           |
 | *first-slide* | whether to include the default title slide                   | `true` |
+
+Notes: 
+
+- *count* refers to the counter in the top right corner of the slides.
+  - `"dot"` is the normal one,
+  - `"dot-section"` is preferred for long presentations, as it only displays dots for the slides in the current section
+  - `"number"` displays a simple page number (e.g `7 / 11`)
+- *title-color:* its advisable to choose a darker color (you can always darken a color in typst, e.g `rgb("#ff851b").darken(50%)`) as its supposed to contrast with the background
+
+
 
 ### Custom Title Slide
 
