@@ -12,9 +12,13 @@ Features:
 
 Example Presentation
 
-| Title Slide                                     | Section                                             | Content (Normal Theme)                          | Content (Full Theme)                                        |
-| ----------------------------------------------- | --------------------------------------------------- | ----------------------------------------------- | ----------------------------------------------------------- |
-| ![Example-Title](screenshots/Example-Title.png) | ![Example-Section](screenshots/Example-Section.png) | ![Example-Slide](screenshots/Example-Slide.png) | ![Example-Full-Slide](./screenshots/Full-Example-Slide.png) |
+| Title Slide                                     | Section                                             |
+| ----------------------------------------------- | --------------------------------------------------- |
+| ![Example-Title](screenshots/Example-Title.png) | ![Example-Section](screenshots/Example-Section.png) |
+
+| Content (Normal Theme)                          | Content (Full Theme)                                        |
+| ----------------------------------------------- | ----------------------------------------------------------- |
+| ![Example-Slide](screenshots/Example-Slide.png) | ![Example-Full-Slide](./screenshots/Full-Example-Slide.png) |
 
 These example slides and a usage guide are available in the `example` Folder on GitHub as a [.typ file](https://github.com/skriptum/diatypst/blob/main/example/example.typ) and a compiled PDF ([normal Theme](https://raw.githubusercontent.com/skriptum/diatypst/refs/heads/main/example/example.pdf), [full Theme](https://raw.githubusercontent.com/skriptum/diatypst/refs/heads/main/example/example_full.pdf)). 
 
@@ -25,7 +29,7 @@ The Full Theme more closely resembles a Beamer Theme, while the normal theme is 
 To start a presentation, initialize it in your typst document:
 
 ```typst
-#import "@preview/diatypst:0.7.1": *
+#import "@preview/diatypst:0.8.0": *
 #show: slides.with(
   title: "Diatypst", // Required
   subtitle: "easy slides in typst",
@@ -92,7 +96,7 @@ For many presentations, it is quite useful to be able to control the appearance 
 To do that, you have to add your custom slide before calling `slides.with`. You need to also adjust the sizing of your custom slide to the ratio and layout you chose. 
 
 ```typst
-#import "@preview/diatypst:0.7.1": *
+#import "@preview/diatypst:0.8.0": *
 
 #set page(
   footer: none, header: none, margin: 0cm,

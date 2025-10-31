@@ -12,7 +12,7 @@
 //   - https://typst.app/docs/tutorial/making-a-template/
 //   - https://github.com/typst/templates
 
-#import "@preview/diatypst:0.7.1": slides
+#import "@preview/diatypst:0.8.0": slides
 
 #show: slides.with(
 $if(title)$
