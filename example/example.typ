@@ -10,7 +10,7 @@
   ratio: 4/3, // aspect ratio of the slides, any valid number
   layout: "medium", // one of "small", "medium", "large"
   toc: true,
-  count: "dot", // one of "dot", "number", or none
+  count: "dot", // one of "dot", "dot-section", "number", or none
   footer: true,
   // footer-title: "Custom Title",
   // footer-subtitle: "Custom Subtitle",
