@@ -11,7 +11,7 @@ cd docs
 pip install -r requirements.txt
 ```
 
-then use sphinx to build the website
+then use sphinx to build the dev version of the website, updated in the background while you edit
 
 ```
 sphinx-autobuild . site
