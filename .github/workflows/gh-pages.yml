@@ -11,7 +11,7 @@ jobs:
       - id: deployment
         uses: sphinx-notes/pages@v3
         with:
-          publish: true
+          publish: false
           documentation_path: "./docs"
           requirements_path: "./docs/requirements.txt"
           cache: true
