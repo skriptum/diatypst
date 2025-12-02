@@ -1,0 +1,5 @@
+FONT: Windsor
+NAME: diatypst
+ICON: icon.png
+ICON SOURCE (modified): KODAK Carousel S Catalog
+COLOR: #15396A
