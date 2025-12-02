@@ -1,3 +1,5 @@
 *.code-workspace
 diaquarto/.DS_Store
 .DS_Store
+.venv
+site/
