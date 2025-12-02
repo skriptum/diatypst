@@ -1,27 +1,21 @@
-name: documentation
+name: Deploy Sphinx documentation to Pages
 
-on: [push, pull_request, workflow_dispatch]
-
-permissions:
-  contents: write
+on:
+  push:
+    branches: [master] # branch to trigger deployment
 
 jobs:
-  docs:
-    runs-on: ubuntu-latest
+  pages:
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-      - name: Install dependencies
-        run: |
-          pip install -r ./docs/requirements.txt
-      - name: Sphinx build
-        run: |
-          sphinx-build ./docs _build
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+      - id: deployment
+        uses: sphinx-notes/pages@v3
         with:
-          publish_branch: gh-pages
+          publish: false
+          documentation_path: "./docs"
+          requirements_path: "./docs/requirements.txt"
+          cache: true
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: _build/
-          force_orphan: true
+          publish_dir: ${{ steps.deployment.outputs.artifact }}
