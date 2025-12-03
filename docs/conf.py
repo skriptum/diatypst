@@ -10,8 +10,7 @@ from typing import Any, Dict
 #
 
 project = "diatypst"
-copyright = "marten w."
-author = "marten w."
+copyright = "mdwm"
 
 # -- General configuration ---------------------------------------------------
 #
