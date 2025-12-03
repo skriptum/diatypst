@@ -14,7 +14,7 @@ Features:
 
 ---
 
- [Typst Universe](https://typst.app/universe/package/diatypst/) | [GitHub](https://github.com/skriptum/Diatypst) | [Homepage](https://skriptum.github.io/diatypst/#/)
+ [Typst Universe](https://typst.app/universe/package/diatypst/) | [GitHub](https://github.com/skriptum/Diatypst) | [Homepage](https://mdwm.org/diatypst/)
 
 > if you like *diatypst*, consider giving it a star on GitHub ⭐
 
