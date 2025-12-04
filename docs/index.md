@@ -23,7 +23,7 @@ Features:
 - adjustable color-theme
 - default show rules for terms, code, lists, ... that match color-theme
 
-Links: [Typst Universe](https://typst.app/universe/package/diatypst/) | [GitHub](https://github.com/skriptum/Diatypst) | [Homepage](https://mdwm.org/diatypst/)
+Links: [Typst Universe](https://typst.app/universe/package/diatypst/) | [GitHub](https://github.com/skriptum/Diatypst) | [Documentation](https://mdwm.org/diatypst/)
 
 > if you like *diatypst*, consider giving it a star on GitHub ⭐
 
