@@ -4,7 +4,7 @@
   title: "Diatypst", // Required
   subtitle: "easy slides in typst",
   date: "01.07.2024",
-  authors: ("Marten Walk"),
+  authors: ("Author Name"),
   // Optional Style Options
   title-color: blue.darken(50%),
   ratio: 4/3, // aspect ratio of the slides, any valid number
@@ -12,10 +12,11 @@
   toc: true,
   count: "dot", // one of "dot", "dot-section", "number", or none
   footer: true,
+  theme: "full"
   // footer-title: "Custom Title",
   // footer-subtitle: "Custom Subtitle",
   // theme: "full", // one of "normal", "full"
-  // ... see the README for more options
+  // ... see the docs for more options
 )
 
 = About _diatypst_
@@ -174,5 +175,3 @@ The word _diatypst_ is inspired by
   #image("diatype.jpg", height: 3cm)
   and the #link("https://en.wikipedia.org/wiki/Diatype_(machine)")[Diatype] (60s typesetting machine)
 ]
-
-

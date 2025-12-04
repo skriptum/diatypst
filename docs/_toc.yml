@@ -1,0 +1,14 @@
+root: index
+subtrees:
+  - caption: "diatypst"
+    hidden: False
+    maxdepth: 1
+    titlesonly: True
+    entries:
+      - file: quickstart.md
+      - file: reference.md
+      - file: styling.md
+      - file: quarto.md
+  - caption: "FAQ"
+    entries:
+      - glob: guides/*

@@ -27,20 +27,9 @@ extensions = [
     "furo.sphinxext",
     # External stuff
     "myst_parser",
+    "sphinx_external_toc",
 ]
 
-# -- Options for extlinks ----------------------------------------------------
-#
-
-extlinks = {
-    "pypi": ("https://pypi.org/project/%s/", "%s"),
-}
-
-
-# -- Options for TODOs -------------------------------------------------------
-#
-
-todo_include_todos = True
 
 # -- Options for Markdown files ----------------------------------------------
 #
@@ -54,6 +43,7 @@ myst_heading_anchors = 5
 myst_fence_as_directive = ["mermaid"]
 
 suppress_warnings = ["myst.header", "myst.xref_missing"]
+
 
 # -- Options for HTML output -------------------------------------------------
 #
