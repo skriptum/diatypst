@@ -1,14 +1,14 @@
 <!doctype html>
 <html class="no-js" lang="en" data-content_root="./">
-  <head>
-<meta charset="utf-8">
+  <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="#">
-        <link rel="canonical" href="https://skriptum.github.io/diatypst/search.html">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Reference" href="reference.html"><link rel="prev" title="diatypst" href="index.html">
+        <link rel="canonical" href="https://skriptum.github.io/diatypst/quickstart.html">
 
     <!-- Generated with Sphinx 8.2.3 and Furo 2025.09.25 -->
-<meta name="robots" content="noindex" />
-<title>Search - diatypst</title><link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
+        <title>Quickstart - diatypst</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=580074bf" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
     
@@ -176,7 +176,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
       </label>
     </div>
@@ -188,15 +188,15 @@
   
   <span class="sidebar-brand-text">diatypst</span>
   
-</a><form class="sidebar-search-container" method="get" action="#" role="search">
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">diatypst</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="styling.html">Styling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quarto.html">Quarto</a></li>
@@ -224,7 +224,17 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          <div class="view-this-page">
+  <a class="muted-link" href="https://github.com/skriptum/diatypst/blob/main/docs/quickstart.md?plain=true" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div><div class="edit-this-page">
+  <a class="muted-link" href="https://github.com/skriptum/diatypst/edit/main/docs/quickstart.md" rel="edit" title="Edit this page">
+    <svg><use href="#svg-pencil"></use></svg>
+    <span class="visually-hidden">Edit this page</span>
+  </a>
+</div><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
               <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
               <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
@@ -232,30 +242,75 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          
-<noscript>
-<div class="admonition error">
-  <p class="admonition-title">Error</p>
-  <p>
-    Please activate JavaScript to enable the search functionality.
-  </p>
+          <section class="tex2jax_ignore mathjax_ignore" id="quickstart">
+<h1>Quickstart<a class="headerlink" href="#quickstart" title="Link to this heading">¶</a></h1>
+<section id="web-app">
+<h2>Web App<a class="headerlink" href="#web-app" title="Link to this heading">¶</a></h2>
+<p>Using <a class="reference external" href="https://typst.app">typst.app</a> to create a presentation is the easiest way to get started.
+Navigate to the <a class="reference external" href="https://typst.app/universe/package/diatypst">Typst Universe</a> and click the “Create Project in App” button. This should prompt you to create a new file in your web app, that automatically uses the template and has some explanations</p>
+<p>You can also initalize it manually in a typst project:</p>
+<div class="highlight-typst notranslate"><div class="highlight"><pre><span></span><span class="kn">#import</span><span class="w"> </span><span class="s2">&quot;@preview/diatypst:0.8.0&quot;</span><span class="p">:</span><span class="w"> </span><span class="o">*</span>
+<span class="kd">#show</span><span class="p">:</span><span class="w"> </span><span class="nv">slides</span><span class="p">.</span><span class="nf">with</span><span class="p">(</span>
+<span class="w">  </span><span class="nv">title</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Diatypst&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Required</span>
+<span class="w">  </span><span class="nv">subtitle</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;easy slides in typst&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nv">date</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;01.07.2024&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nv">authors</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="s2">&quot;John Doe&quot;</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="p">...</span>
+</pre></div>
 </div>
-</noscript>
+<p>Then, insert your content.</p>
+<ul class="simple">
+<li><p>Level-one headings corresponds to new sections.</p></li>
+<li><p>Level-two headings corresponds to new slides.</p></li>
+<li><p>or manually create a new slide with a <code class="docutils literal notranslate"><span class="pre">#pagebreak()</span></code></p></li>
+</ul>
+<div class="highlight-typst notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
 
-<div id="search-results"></div>
+<span class="gh">= First Section</span>
+
+<span class="gh">== First Slide</span>
+
+<span class="nf">#lorem</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="offline">
+<h2>Offline<a class="headerlink" href="#offline" title="Link to this heading">¶</a></h2>
+<p>If you use Typst offline, e.g in VS Code, the typst compiler should download the version used in a document automatically. You just need to initialize the document as above ↑</p>
+</section>
+</section>
 
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="reference.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Reference</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Home</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -281,8 +336,28 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Quickstart</a><ul>
+<li><a class="reference internal" href="#web-app">Web App</a></li>
+<li><a class="reference internal" href="#offline">Offline</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -291,8 +366,5 @@
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=46bd48cc"></script>
-    
-<script src="_static/searchtools.js"></script>
-<script src="_static/language_data.js"></script>
-<script src="searchindex.js"></script></body>
+    </body>
 </html>

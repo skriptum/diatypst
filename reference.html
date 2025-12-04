@@ -1,14 +1,14 @@
 <!doctype html>
 <html class="no-js" lang="en" data-content_root="./">
-  <head>
-<meta charset="utf-8">
+  <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="#">
-        <link rel="canonical" href="https://skriptum.github.io/diatypst/search.html">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Styling" href="styling.html"><link rel="prev" title="Quickstart" href="quickstart.html">
+        <link rel="canonical" href="https://skriptum.github.io/diatypst/reference.html">
 
     <!-- Generated with Sphinx 8.2.3 and Furo 2025.09.25 -->
-<meta name="robots" content="noindex" />
-<title>Search - diatypst</title><link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
+        <title>Reference - diatypst</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=580074bf" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
     
@@ -176,7 +176,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
       </label>
     </div>
@@ -188,16 +188,16 @@
   
   <span class="sidebar-brand-text">diatypst</span>
   
-</a><form class="sidebar-search-container" method="get" action="#" role="search">
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">diatypst</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="styling.html">Styling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quarto.html">Quarto</a></li>
 </ul>
@@ -224,7 +224,17 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          <div class="view-this-page">
+  <a class="muted-link" href="https://github.com/skriptum/diatypst/blob/main/docs/reference.md?plain=true" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div><div class="edit-this-page">
+  <a class="muted-link" href="https://github.com/skriptum/diatypst/edit/main/docs/reference.md" rel="edit" title="Edit this page">
+    <svg><use href="#svg-pencil"></use></svg>
+    <span class="visually-hidden">Edit this page</span>
+  </a>
+</div><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
               <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
               <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
@@ -232,30 +242,128 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          
-<noscript>
-<div class="admonition error">
-  <p class="admonition-title">Error</p>
-  <p>
-    Please activate JavaScript to enable the search functionality.
-  </p>
+          <section class="tex2jax_ignore mathjax_ignore" id="reference">
+<h1>Reference<a class="headerlink" href="#reference" title="Link to this heading">¶</a></h1>
+<p>all available Options to initialize the template with</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Keyword</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Default</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><em>title</em></p></td>
+<td><p>Title of your Presentation, visible also in footer</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">none</span></code> but required!</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>subtitle</em></p></td>
+<td><p>Subtitle, also visible in footer</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">none</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>date</em></p></td>
+<td><p>a normal string presenting your date</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">none</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>authors</em></p></td>
+<td><p>either string or array of strings</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">none</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>layout</em></p></td>
+<td><p>one of “small”, “medium”, “large”, adjusts sizing of the elements on the slides</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;medium&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>ratio</em></p></td>
+<td><p>aspect ratio of the slides, e.g 16/9</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4/3</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>title-color</em></p></td>
+<td><p>Color to base the Elements of the Presentation on</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">blue.darken(50%)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>bg-color</em></p></td>
+<td><p>Background color of the slides, can be any color</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">white</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>count</em></p></td>
+<td><p>page counter style, either “dot”, “number”, “dot-section”, or <code class="docutils literal notranslate"><span class="pre">none</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;dot&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>footer</em></p></td>
+<td><p>whether to display the footer at the bottom</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>toc</em></p></td>
+<td><p>whether to display the table of contents</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>footer-title</em></p></td>
+<td><p>custom text in the footer title (left)</p></td>
+<td><p>same as <em>title</em></p></td>
+</tr>
+<tr class="row-even"><td><p><em>footer-subtitle</em></p></td>
+<td><p>custom text in the footer subtitle (right)</p></td>
+<td><p>same as <em>subtitle</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>theme</em></p></td>
+<td><p>slide theme, either “normal” or “full”</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;normal&quot;</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>first-slide</em></p></td>
+<td><p>whether to include the default title slide</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+</tbody>
+</table>
 </div>
-</noscript>
-
-<div id="search-results"></div>
+<section id="count">
+<h2>Count<a class="headerlink" href="#count" title="Link to this heading">¶</a></h2>
+<p>The option <em>count</em> refers to the counter in the top right corner of the slides. If it is a type of dot counter, note that you can click on the dots to jump to the respective slide!</p>
+<p><code class="docutils literal notranslate"><span class="pre">&quot;dot&quot;</span></code> is the default:</p>
+<p><img alt="Dot default" src="_images/dot_default.png" /></p>
+<p>In longer presentations, these dots can flow over. In this case, using <code class="docutils literal notranslate"><span class="pre">&quot;dot-section&quot;</span></code> is preferred, as it only displays dots for the slides in the current section. You can click the small triangles to jump to the next / preceding section slide</p>
+<p><img alt="Dot section" src="_images/dot_section.png" /></p>
+<p>If even that is too long or you just want a simple page counter, use <code class="docutils literal notranslate"><span class="pre">&quot;number&quot;</span></code>:</p>
+<p><img alt="Number" src="_images/dot_number.png" /></p>
+<p>or completely remove it with <code class="docutils literal notranslate"><span class="pre">none</span></code>.</p>
+</section>
+<section id="title-color">
+<h2>Title color<a class="headerlink" href="#title-color" title="Link to this heading">¶</a></h2>
+<p>Its advisable to choose a darker color (you can always darken a color in typst, e.g <code class="docutils literal notranslate"><span class="pre">rgb(&quot;#ff851b&quot;).darken(50%)</span></code>) as its supposed to contrast with the background. The default is a dark blue, but feel free to match your preferred style.</p>
+</section>
+</section>
 
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="styling.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Styling</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="quickstart.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Quickstart</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -281,8 +389,28 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Reference</a><ul>
+<li><a class="reference internal" href="#count">Count</a></li>
+<li><a class="reference internal" href="#title-color">Title color</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -291,8 +419,5 @@
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=46bd48cc"></script>
-    
-<script src="_static/searchtools.js"></script>
-<script src="_static/language_data.js"></script>
-<script src="searchindex.js"></script></body>
+    </body>
 </html>

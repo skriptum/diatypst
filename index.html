@@ -3,7 +3,7 @@
   <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html">
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Quickstart" href="quickstart.html">
         <link rel="canonical" href="https://skriptum.github.io/diatypst/index.html">
 
     <!-- Generated with Sphinx 8.2.3 and Furo 2025.09.25 -->
@@ -194,7 +194,19 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  
+  <p class="caption" role="heading"><span class="caption-text">diatypst</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="styling.html">Styling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quarto.html">Quarto</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">FAQ</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guides/background.html">How to use a black background?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/first-slide.html">How to customize the first slide?</a></li>
+</ul>
+
 </div>
 </div>
 
@@ -238,7 +250,7 @@
           <img alt="_images/wide_dark.png" class="only-light align-center" src="_images/wide_dark.png" />
 <img alt="_images/wide_light.png" class="only-dark align-center" src="_images/wide_light.png" />
 <section class="tex2jax_ignore mathjax_ignore" id="diatypst">
-<h1>Diatypst<a class="headerlink" href="#diatypst" title="Link to this heading">¶</a></h1>
+<h1>diatypst<a class="headerlink" href="#diatypst" title="Link to this heading">¶</a></h1>
 <p><em>easy slides in typst</em></p>
 <p>Features:</p>
 <ul class="simple">
@@ -248,11 +260,11 @@
 <li><p>adjustable color-theme</p></li>
 <li><p>default show rules for terms, code, lists, … that match color-theme</p></li>
 </ul>
-<hr class="docutils" />
-<p><a class="reference external" href="https://typst.app/universe/package/diatypst/">Typst Universe</a> | <a class="reference external" href="https://github.com/skriptum/Diatypst">GitHub</a> | <a class="reference external" href="https://mdwm.org/diatypst/">Homepage</a></p>
+<p>Links: <a class="reference external" href="https://typst.app/universe/package/diatypst/">Typst Universe</a> | <a class="reference external" href="https://github.com/skriptum/Diatypst">GitHub</a> | <a class="reference external" href="https://mdwm.org/diatypst/">Documentation</a></p>
 <blockquote>
 <div><p>if you like <em>diatypst</em>, consider giving it a star on GitHub ⭐</p>
 </div></blockquote>
+<p>To get started, head to the <a class="reference internal" href="quickstart.html"><span class="std std-doc">quickstart</span></a> guide. Alternatively, take a look at the <a class="reference internal" href="reference.html"><span class="std std-doc">reference</span></a> to get a grip on all available options.</p>
 <hr class="docutils" />
 <p>Here is an example of a <em>diatypst</em> presentation</p>
 <div class="table-wrapper colwidths-auto docutils container">
@@ -284,169 +296,23 @@
 </table>
 </div>
 <p>These example slides and a usage guide are available in the <code class="docutils literal notranslate"><span class="pre">example</span></code> Folder on GitHub as a <a class="reference external" href="https://github.com/skriptum/diatypst/blob/main/example/example.typ">.typ file</a> and a compiled PDF (<a class="reference external" href="https://raw.githubusercontent.com/skriptum/diatypst/refs/heads/main/example/example.pdf">normal Theme</a>, <a class="reference external" href="https://raw.githubusercontent.com/skriptum/diatypst/refs/heads/main/example/example_full.pdf">full Theme</a>).</p>
-<p><em>The Full Theme more closely resembles a Beamer Theme, while the normal theme is a bit simpler (without being boring)</em></p>
-<section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading">¶</a></h2>
-<p>To start a presentation, initialize it in your typst document:</p>
-<div class="highlight-typst notranslate"><div class="highlight"><pre><span></span><span class="kn">#import</span><span class="w"> </span><span class="s2">&quot;@preview/diatypst:0.8.0&quot;</span><span class="p">:</span><span class="w"> </span><span class="o">*</span>
-<span class="kd">#show</span><span class="p">:</span><span class="w"> </span><span class="nv">slides</span><span class="p">.</span><span class="nf">with</span><span class="p">(</span>
-<span class="w">  </span><span class="nv">title</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Diatypst&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Required</span>
-<span class="w">  </span><span class="nv">subtitle</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;easy slides in typst&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nv">date</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;01.07.2024&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nv">authors</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="s2">&quot;John Doe&quot;</span><span class="p">),</span>
-<span class="p">)</span>
-<span class="p">...</span>
-</pre></div>
-</div>
-<p>Then, insert your content.</p>
-<ul class="simple">
-<li><p>Level-one headings corresponds to new sections.</p></li>
-<li><p>Level-two headings corresponds to new slides.</p></li>
-<li><p>or manually create a new slide with a <code class="docutils literal notranslate"><span class="pre">#pagebreak()</span></code></p></li>
-</ul>
-<div class="highlight-typst notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
-
-<span class="gh">= First Section</span>
-
-<span class="gh">== First Slide</span>
-
-<span class="nf">#lorem</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><em>diatypst</em> is also available on the <a class="reference external" href="https://typst.app/universe/package/diatypst">Typst Universe</a> for easy importing into a project on typst.app</p>
-</section>
-<section id="options">
-<h2>Options<a class="headerlink" href="#options" title="Link to this heading">¶</a></h2>
-<p>all available Options to initialize the template with</p>
-<div class="table-wrapper colwidths-auto docutils container">
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Keyword</p></th>
-<th class="head"><p>Description</p></th>
-<th class="head"><p>Default</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><em>title</em></p></td>
-<td><p>Title of your Presentation, visible also in footer</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">none</span></code> but required!</p></td>
-</tr>
-<tr class="row-odd"><td><p><em>subtitle</em></p></td>
-<td><p>Subtitle, also visible in footer</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">none</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><em>date</em></p></td>
-<td><p>a normal string presenting your date</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">none</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><em>authors</em></p></td>
-<td><p>either string or array of strings</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">none</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><em>layout</em></p></td>
-<td><p>one of “small”, “medium”, “large”, adjusts sizing of the elements on the slides</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">&quot;medium&quot;</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><em>ratio</em></p></td>
-<td><p>aspect ratio of the slides, e.g 16/9</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">4/3</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><em>title-color</em></p></td>
-<td><p>Color to base the Elements of the Presentation on</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">blue.darken(50%)</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><em>bg-color</em></p></td>
-<td><p>Background color of the slides, can be any color</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">white</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><em>count</em></p></td>
-<td><p>page counter style, either “dot”, “number”, “dot-section”, or <code class="docutils literal notranslate"><span class="pre">none</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">&quot;dot&quot;</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><em>footer</em></p></td>
-<td><p>whether to display the footer at the bottom</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><em>toc</em></p></td>
-<td><p>whether to display the table of contents</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><em>footer-title</em></p></td>
-<td><p>custom text in the footer title (left)</p></td>
-<td><p>same as <em>title</em></p></td>
-</tr>
-<tr class="row-even"><td><p><em>footer-subtitle</em></p></td>
-<td><p>custom text in the footer subtitle (right)</p></td>
-<td><p>same as <em>subtitle</em></p></td>
-</tr>
-<tr class="row-odd"><td><p><em>theme</em></p></td>
-<td><p>slide theme, either “normal” or “full”</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">&quot;normal&quot;</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><em>first-slide</em></p></td>
-<td><p>whether to include the default title slide</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Notes:</p>
-<ul class="simple">
-<li><p><em>count</em> refers to the counter in the top right corner of the slides.</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;dot&quot;</span></code> is the normal one,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;dot-section&quot;</span></code> is preferred for long presentations, as it only displays dots for the slides in the current section</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;number&quot;</span></code> displays a simple page number (e.g <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">/</span> <span class="pre">11</span></code>)</p></li>
-</ul>
-</li>
-<li><p><em>title-color:</em> its advisable to choose a darker color (you can always darken a color in typst, e.g <code class="docutils literal notranslate"><span class="pre">rgb(&quot;#ff851b&quot;).darken(50%)</span></code>) as its supposed to contrast with the background</p></li>
-</ul>
-<section id="custom-title-slide">
-<h3>Custom Title Slide<a class="headerlink" href="#custom-title-slide" title="Link to this heading">¶</a></h3>
-<p>For many presentations, it is quite useful to be able to control the appearance of the first slide. diatypst therefore has the option to disable the default title slide (<code class="docutils literal notranslate"><span class="pre">first-slide:</span> <span class="pre">false</span></code>) and allow users to create their own. This is a bit more complicated, but gives you more freedom to include logos etc.</p>
-<p>To do that, you have to add your custom slide before calling <code class="docutils literal notranslate"><span class="pre">slides.with</span></code>. You need to also adjust the sizing of your custom slide to the ratio and layout you chose.</p>
-<div class="highlight-typst notranslate"><div class="highlight"><pre><span></span><span class="kn">#import</span><span class="w"> </span><span class="s2">&quot;@preview/diatypst:0.8.0&quot;</span><span class="p">:</span><span class="w"> </span><span class="o">*</span>
-
-<span class="kd">#set</span><span class="w"> </span><span class="nf">page</span><span class="p">(</span>
-<span class="w">  </span><span class="nv">footer</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">,</span><span class="w"> </span><span class="nv">header</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">,</span><span class="w"> </span><span class="nv">margin</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="kr">cm</span><span class="p">,</span>
-<span class="w">  </span><span class="nv">height</span><span class="p">:</span><span class="w"> </span><span class="m">10.5</span><span class="kr">cm</span><span class="p">,</span><span class="w"> </span><span class="c1">// height is either 9cm, 10.5cm or 12cm</span>
-<span class="w">  </span><span class="nv">width</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="err">/</span><span class="mi">3</span><span class="o">*</span><span class="m">10.5</span><span class="kr">cm</span><span class="p">,</span><span class="w"> </span><span class="c1">// width is your height * your ratio</span>
-<span class="p">)</span>
-
-<span class="c1">// Custom Title Slide Content goes here</span>
-
-<span class="kd">#show</span><span class="p">:</span><span class="w"> </span><span class="nv">slides</span><span class="p">.</span><span class="nf">with</span><span class="p">(</span>
-<span class="w">  </span><span class="p">...,</span>
-<span class="w">  </span><span class="nv">first-slide</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">  </span><span class="p">...</span>
-</pre></div>
-</div>
-</section>
-</section>
-<section id="quarto">
-<h2>Quarto<a class="headerlink" href="#quarto" title="Link to this heading">¶</a></h2>
-<p>This template is also available as a <a class="reference external" href="https://quarto.org/">Quarto</a> extension. To use it, add it to your project with the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>quarto<span class="w"> </span>add<span class="w"> </span>skriptum/diatypst/diaquarto
-</pre></div>
-</div>
-<p>Then, create a qmd file with the following YAML frontmatter:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Untitled&quot;</span>
-<span class="nn">...</span>
-<span class="nt">format</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">diaquarto-typst</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">layout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">medium</span><span class="w"> </span><span class="c1"># small, medium, large</span>
-<span class="w">    </span><span class="nt">ratio</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16/9</span><span class="w"> </span><span class="c1"># any ratio possible</span>
-<span class="w">    </span><span class="nt">title-color</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;013220&quot;</span><span class="w"> </span><span class="c1"># Any Hex code for the title color (without #)</span>
-</pre></div>
-</div>
-<p>Only some of the options from the typst version are available in the quarto version, more will be added.</p>
-</section>
 <section id="inspiration">
 <h2>Inspiration<a class="headerlink" href="#inspiration" title="Link to this heading">¶</a></h2>
 <p>this template is inspired by <a class="reference external" href="https://github.com/glambrechts/slydst">slydst</a>, and takes part of the code from it. If you want simpler slides, look here!</p>
 <p>The word <em>Diatypst</em> is inspired by the ease of use of a <a class="reference external" href="https://de.wikipedia.org/wiki/Diaprojektor"><strong>Dia</strong>-projektor</a> (German for Slide Projector, left) and the <a class="reference external" href="https://en.wikipedia.org/wiki/Diatype_(machine)">Diatype</a> (right)</p>
 <p><img alt="explanation" src="_images/explanation.png" /></p>
 </section>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">diatypst</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="styling.html">Styling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quarto.html">Quarto</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
         </article>
@@ -454,7 +320,15 @@
       <footer>
         
         <div class="related-pages">
-          
+          <a class="next-page" href="quickstart.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Quickstart</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
           
         </div>
         <div class="bottom-of-page">
@@ -493,13 +367,7 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Diatypst</a><ul>
-<li><a class="reference internal" href="#usage">Usage</a></li>
-<li><a class="reference internal" href="#options">Options</a><ul>
-<li><a class="reference internal" href="#custom-title-slide">Custom Title Slide</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#quarto">Quarto</a></li>
+<li><a class="reference internal" href="#">diatypst</a><ul>
 <li><a class="reference internal" href="#inspiration">Inspiration</a></li>
 </ul>
 </li>
