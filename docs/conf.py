@@ -49,7 +49,7 @@ suppress_warnings = ["myst.header", "myst.xref_missing"]
 #
 
 html_theme = "furo"
-html_baseurl = "https://skriptum.github.io/diatypst"
+html_baseurl = "https://mdwm.org/diatypst"
 language = "en"
 
 html_title = "diatypst"  # either logo or title!
