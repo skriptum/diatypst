@@ -28,6 +28,7 @@ extensions = [
     # External stuff
     "myst_parser",
     "sphinx_external_toc",
+    "sphinx_sitemap",
 ]
 
 
@@ -49,13 +50,13 @@ suppress_warnings = ["myst.header", "myst.xref_missing"]
 #
 
 html_theme = "furo"
-html_baseurl = "https://mdwm.org/diatypst"
-language = "en"
+html_baseurl = "https://mdwm.org/diatypst/"
 
 html_title = "diatypst"  # either logo or title!
 # html_logo = "assets/square_dark.png"
 # html_sidebars = {"**": []}  # for the sidebar
 
+exclude_patterns = [".venv/*", "README.md"]
 
 html_theme_options: Dict[str, Any] = {
     "light_css_variables": {
