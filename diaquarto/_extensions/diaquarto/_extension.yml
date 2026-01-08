@@ -1,6 +1,6 @@
 title: diaquarto
 author: martenwalksaway
-version: 0.8.0
+version: 0.9.0
 quarto-required: ">=1.5.0"
 contributes:
   formats:
