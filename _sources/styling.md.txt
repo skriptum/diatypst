@@ -81,3 +81,21 @@ And finally, lists:
 will look like this
 
 ![List Styling](images/styling_list.png)
+
+## Reference / Link
+
+Similar to beamer, you can link to headings on other slides, useful for appendices etc.
+
+To create this hyperlink:
+
+![Link Styling](images/styling_ref.png)
+
+use this code:
+
+```typst
+You can go to the  #ref(<label1>, supplement: "first slide") or  maybe to @label2 if that suits you better.
+````
+
+see more on links in the [guide](guides/link-slide.md)
+
+
