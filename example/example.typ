@@ -12,7 +12,7 @@
   toc: true,
   count: "dot", // one of "dot", "dot-section", "number", or none
   footer: true,
-  theme: "full"
+  theme: "normal"
   // footer-title: "Custom Title",
   // footer-subtitle: "Custom Subtitle",
   // theme: "full", // one of "normal", "full"
