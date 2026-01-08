@@ -8,7 +8,7 @@ Navigate to the [Typst Universe](https://typst.app/universe/package/diatypst) an
 You can also initalize it manually in a typst project:
 
 ```typst
-#import "@preview/diatypst:0.8.0": *
+#import "@preview/diatypst:0.9.0": *
 #show: slides.with(
   title: "Diatypst", // Required
   subtitle: "easy slides in typst",

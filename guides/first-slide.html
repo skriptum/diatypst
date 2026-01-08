@@ -252,7 +252,7 @@
 <h1>How to customize the first slide?<a class="headerlink" href="#how-to-customize-the-first-slide" title="Link to this heading">¶</a></h1>
 <p>For many presentations, it is quite useful to be able to control the appearance of the first slide. diatypst therefore has the option to disable the default title slide (<code class="docutils literal notranslate"><span class="pre">first-slide:</span> <span class="pre">false</span></code>) and allow users to create their own. This is a bit more complicated, but gives you more freedom to include logos etc.</p>
 <p>To do that, you have to add your custom slide before calling <code class="docutils literal notranslate"><span class="pre">slides.with</span></code>. You need to also adjust the sizing of your custom slide to the ratio and layout you chose.</p>
-<div class="highlight-typst notranslate"><div class="highlight"><pre><span></span><span class="kn">#import</span><span class="w"> </span><span class="s2">&quot;@preview/diatypst:0.8.0&quot;</span><span class="p">:</span><span class="w"> </span><span class="o">*</span>
+<div class="highlight-typst notranslate"><div class="highlight"><pre><span></span><span class="kn">#import</span><span class="w"> </span><span class="s2">&quot;@preview/diatypst:0.9.0&quot;</span><span class="p">:</span><span class="w"> </span><span class="o">*</span>
 
 <span class="kd">#set</span><span class="w"> </span><span class="nf">page</span><span class="p">(</span>
 <span class="w">  </span><span class="nv">footer</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">,</span><span class="w"> </span><span class="nv">header</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">,</span><span class="w"> </span><span class="nv">margin</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="kr">cm</span><span class="p">,</span>
@@ -271,7 +271,7 @@
 <section id="example-1-add-logo-to-default-slide">
 <h2>Example 1: add logo to default slide<a class="headerlink" href="#example-1-add-logo-to-default-slide" title="Link to this heading">¶</a></h2>
 <p>If you just want to add your logo in the bottom and keep the default styling:</p>
-<div class="highlight-typst notranslate"><div class="highlight"><pre><span></span><span class="kn">#import</span><span class="w"> </span><span class="s2">&quot;@preview/diatypst:0.8.0&quot;</span><span class="p">:</span><span class="w"> </span><span class="o">*</span>
+<div class="highlight-typst notranslate"><div class="highlight"><pre><span></span><span class="kn">#import</span><span class="w"> </span><span class="s2">&quot;@preview/diatypst:0.9.0&quot;</span><span class="p">:</span><span class="w"> </span><span class="o">*</span>
 
 <span class="kd">#set</span><span class="w"> </span><span class="nf">page</span><span class="p">(</span>
 <span class="w">  </span><span class="nv">footer</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">,</span><span class="w"> </span><span class="nv">header</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">,</span><span class="w"> </span><span class="nv">margin</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="kr">cm</span><span class="p">,</span>
@@ -313,7 +313,7 @@
 <section id="example-2-change-the-layout-of-the-first-slide">
 <h2>Example 2: change the layout of the first slide<a class="headerlink" href="#example-2-change-the-layout-of-the-first-slide" title="Link to this heading">¶</a></h2>
 <p>You can also be creative in changing the layout of the first slide, for example:</p>
-<div class="highlight-typst notranslate"><div class="highlight"><pre><span></span><span class="kn">#import</span><span class="w"> </span><span class="s2">&quot;@preview/diatypst:0.8.0&quot;</span><span class="p">:</span><span class="w"> </span><span class="o">*</span>
+<div class="highlight-typst notranslate"><div class="highlight"><pre><span></span><span class="kn">#import</span><span class="w"> </span><span class="s2">&quot;@preview/diatypst:0.9.0&quot;</span><span class="p">:</span><span class="w"> </span><span class="o">*</span>
 
 <span class="kd">#set</span><span class="w"> </span><span class="nf">page</span><span class="p">(</span>
 <span class="w">  </span><span class="nv">footer</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">,</span><span class="w"> </span><span class="nv">header</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">,</span><span class="w"> </span><span class="nv">margin</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="kr">cm</span><span class="p">,</span>
