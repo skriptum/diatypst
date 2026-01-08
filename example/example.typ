@@ -119,7 +119,7 @@ Lists have their marker respect the `title-color`
 
 
 
-== Tables and Quotes
+== Tables and Quotes <label1>
 
 
 
@@ -150,6 +150,14 @@ And here comes a quote
 
 And finally, web links are styled like this: #link("https://typst.app")[typst.app]
 
+== Links to other slides
+
+Similar to beamer, you can link to headings on other slides, useful for appendices etc.
+
+For example, this links to the #ref(<label1>, supplement: "preceding slide") or this to the last slide: @last
+
+It uses the reference syntax of typst, for a detailed explanation see the #link("https://mdwm.org/diatypst/guides/link-slide.html")[diatypst guides].
+
 = Additional
 
 == More Info
@@ -160,7 +168,7 @@ For Issues and Feature Requests, please use the GitHub Repo.
 
 To find the source code for this presentation, visit the #link("https://github.com/skriptum/diatypst/tree/main/example")[example folder on GitHub]. An minimal template can also be #link("https://github.com/skriptum/diatypst/blob/main/template/main.typ")[found here]
 
-== Inspiration
+== Inspiration <last>
 
 this template is inspired by #link("https://github.com/glambrechts/slydst")[slydst], and takes part of the code from it. If you want simpler slides, look here!
 
