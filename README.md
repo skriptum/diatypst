@@ -97,6 +97,7 @@ Notes:
   - `"number"` displays a simple page number (e.g `7 / 11`)
 - *title-color:* its advisable to choose a darker color (you can always darken a color in typst, e.g `rgb("#ff851b").darken(50%)`) as its supposed to contrast with the background
 
+diatypst also comes with some sensible default styling for common elements in presentations (tables, links to slides, etc). See [the docs](https://mdwm.org/diatypst/styling.html) for more information.
 
 
 ### Custom Title Slide

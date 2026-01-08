@@ -37,7 +37,7 @@ $if(title-color)$
   title-color: rgb("#$title-color$"),
 $endif$
 $if(counter)$
-  count: [$counter$],
+  count: "$counter$",
 $endif$
 $for(footer)$
   footer: $footer$,

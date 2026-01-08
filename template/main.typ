@@ -6,7 +6,7 @@
   date: "01.07.2024",
   authors: ("Author Name"),
 
-  // Optional Styling (for more and explanation of options take a look at the typst universe)
+  // Optional (for more see docs at https://mdwm.org/diatypst/)
   ratio: 16/9,
   layout: "medium",
   title-color: blue.darken(60%),
