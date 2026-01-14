@@ -1,4 +1,4 @@
-# How to customize the first slide?
+# How to add a logo the first slide?
 
 For many presentations, it is quite useful to be able to control the appearance of the first slide. diatypst therefore has the option to disable the default title slide (`first-slide: false`) and allow users to create their own. This is a bit more complicated, but gives you more freedom to include logos etc.
 
