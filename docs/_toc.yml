@@ -9,6 +9,7 @@ subtrees:
       - file: reference.md
       - file: styling.md
       - file: quarto.md
+      - file: example.md
   - caption: "FAQ"
     entries:
       - glob: guides/*
