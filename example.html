@@ -3,11 +3,11 @@
   <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Quarto" href="quarto.html"><link rel="prev" title="Reference" href="reference.html">
-        <link rel="canonical" href="https://mdwm.org/diatypst/styling.html">
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="How to use a black background?" href="guides/background.html"><link rel="prev" title="Quarto" href="quarto.html">
+        <link rel="canonical" href="https://mdwm.org/diatypst/example.html">
 
     <!-- Generated with Sphinx 8.2.3 and Furo 2025.09.25 -->
-        <title>Styling - diatypst</title>
+        <title>Example PDF - diatypst</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=580074bf" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
@@ -198,9 +198,9 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Styling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="styling.html">Styling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quarto.html">Quarto</a></li>
-<li class="toctree-l1"><a class="reference internal" href="example.html">Example PDF</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Example PDF</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">FAQ</span></p>
 <ul>
@@ -227,12 +227,12 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="https://github.com/skriptum/diatypst/blob/main/docs/styling.md?plain=true" title="View this page">
+  <a class="muted-link" href="https://github.com/skriptum/diatypst/blob/main/docs/example.md?plain=true" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
 </div><div class="edit-this-page">
-  <a class="muted-link" href="https://github.com/skriptum/diatypst/edit/main/docs/styling.md" rel="edit" title="Edit this page">
+  <a class="muted-link" href="https://github.com/skriptum/diatypst/edit/main/docs/example.md" rel="edit" title="Edit this page">
     <svg><use href="#svg-pencil"></use></svg>
     <span class="visually-hidden">Edit this page</span>
   </a>
@@ -249,81 +249,22 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section class="tex2jax_ignore mathjax_ignore" id="styling">
-<h1>Styling<a class="headerlink" href="#styling" title="Link to this heading">¶</a></h1>
-<p><em>diatypst</em> includes some default styling for commonly used elements in typst. They all follow the theme color that was set in the call to diatypst (by default a dark blue).</p>
-<section id="terms">
-<h2>Terms<a class="headerlink" href="#terms" title="Link to this heading">¶</a></h2>
-<p>A typst <a class="reference external" href="https://typst.app/docs/reference/model/terms/">term</a>:</p>
-<div class="highlight-typst notranslate"><div class="highlight"><pre><span></span><span class="p">/</span><span class="w"> </span><span class="nv">*Term*</span><span class="p">:</span><span class="w"> </span>Definition
-</pre></div>
-</div>
-<p>will look like this:</p>
-<p><img alt="Term Styling" src="_images/styling_term.png" /></p>
+          <section class="tex2jax_ignore mathjax_ignore" id="example-pdf">
+<h1>Example PDF<a class="headerlink" href="#example-pdf" title="Link to this heading">¶</a></h1>
+<p>A shorter version of this guide is also available in a PDF Format, showcasing some of the styling and functionality the package has to offer. Both examples here are styled using their respective theme, but have exactly the same content.</p>
+<section id="normal-theme">
+<h2>Normal Theme<a class="headerlink" href="#normal-theme" title="Link to this heading">¶</a></h2>
+<p>Here is a slide of the PDF guide produced using the <em>normal</em> theme.</p>
+<p><img alt="Example_normal" src="_images/Example_normal.png" /></p>
+<p><a class="reference external" href="https://raw.githubusercontent.com/skriptum/diatypst/refs/heads/main/example/example.pdf">Click here to go to the PDF</a></p>
+<p><a class="reference external" href="https://github.com/skriptum/diatypst/blob/main/example/example.typ">And here is the .typ file that produced this PDF</a></p>
 </section>
-<section id="code-blocks">
-<h2>Code Blocks<a class="headerlink" href="#code-blocks" title="Link to this heading">¶</a></h2>
-<p>A <a class="reference external" href="https://typst.app/docs/reference/text/raw/">code block</a>:</p>
-<div class="highlight-typst notranslate"><div class="highlight"><pre><span></span><span class="sb">```python</span>
-<span class="sb">// Example Code</span>
-<span class="sb">print(&quot;Hello World&quot;)</span>
-<span class="sb">```</span>
-</pre></div>
-</div>
-<p>will look like this:</p>
-<p><img alt="Code Styling" src="_images/styling_code.png" /></p>
-</section>
-<section id="quotes">
-<h2>Quotes<a class="headerlink" href="#quotes" title="Link to this heading">¶</a></h2>
-<p>A <a class="reference external" href="https://typst.app/docs/reference/model/quote/">quote</a>:</p>
-<div class="highlight-typst notranslate"><div class="highlight"><pre><span></span><span class="nf">#quote</span><span class="p">(</span><span class="nv">attribution</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>Plato<span class="p">])[</span>
-<span class="w">  </span>This<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>quote
-<span class="p">]</span>
-</pre></div>
-</div>
-<p>will look like this:</p>
-<p><img alt="Quote Styling" src="_images/styling_quote.png" /></p>
-</section>
-<section id="tables">
-<h2>Tables<a class="headerlink" href="#tables" title="Link to this heading">¶</a></h2>
-<p>A <a class="reference external" href="https://typst.app/docs/reference/model/table/">table</a>:</p>
-<div class="highlight-typst notranslate"><div class="highlight"><pre><span></span><span class="nf">#table</span><span class="p">(</span>
-<span class="w">  </span><span class="nv">columns</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
-<span class="w">  </span><span class="p">[</span><span class="gs">*Header*</span><span class="p">],[</span><span class="gs">*Header*</span><span class="p">],[</span><span class="gs">*Header*</span><span class="p">],</span>
-<span class="w">  </span><span class="p">[</span>Cell<span class="p">],[</span>Cell<span class="p">],[</span>Cell<span class="p">],</span>
-<span class="w">  </span><span class="p">[</span>Cell<span class="p">],[</span>Cell<span class="p">],[</span>Cell<span class="p">],</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-<p>will look like this:</p>
-<p><img alt="Table Styling" src="_images/styling_table.png" /></p>
-</section>
-<section id="lists">
-<h2>Lists<a class="headerlink" href="#lists" title="Link to this heading">¶</a></h2>
-<p>And finally, lists:</p>
-<div class="highlight-typst notranslate"><div class="highlight"><pre><span></span><span class="c1">// unnumbered</span>
-<span class="p">-</span><span class="w"> </span>A
-<span class="w">  </span><span class="p">-</span><span class="w"> </span>AAA
-<span class="w">    </span><span class="p">-</span><span class="w"> </span>B
-<span class="c1">// or numbered</span>
-<span class="p">1.</span><span class="w"> </span>AAA
-<span class="p">2.</span><span class="w"> </span>BBB
-<span class="p">3.</span><span class="w"> </span>CCC
-</pre></div>
-</div>
-<p>will look like this</p>
-<p><img alt="List Styling" src="_images/styling_list.png" /></p>
-</section>
-<section id="reference-link">
-<h2>Reference / Link<a class="headerlink" href="#reference-link" title="Link to this heading">¶</a></h2>
-<p>Similar to beamer, you can link to headings on other slides, useful for appendices etc.</p>
-<p>To create this hyperlink:</p>
-<p><img alt="Link Styling" src="_images/styling_ref.png" /></p>
-<p>use this code:</p>
-<div class="highlight-typst notranslate"><div class="highlight"><pre><span></span>You<span class="w"> </span>can<span class="w"> </span>go<span class="w"> </span>to<span class="w"> </span>the<span class="w">  </span><span class="nf">#ref</span><span class="p">(</span><span class="o">&lt;</span><span class="nv">label1</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="nv">supplement</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;first slide&quot;</span><span class="p">)</span><span class="w"> </span>or<span class="w">  </span>maybe<span class="w"> </span>to<span class="w"> </span><span class="nl">@label2</span><span class="w"> </span>if<span class="w"> </span>that<span class="w"> </span>suits<span class="w"> </span>you<span class="w"> </span>better.
-</pre></div>
-</div>
-<p>see more on links in the <a class="reference internal" href="guides/link-slide.html"><span class="std std-doc">guide</span></a></p>
+<section id="full-theme">
+<h2>Full Theme<a class="headerlink" href="#full-theme" title="Link to this heading">¶</a></h2>
+<p>Exemplary Slide produced with the <em>full</em> theme:</p>
+<p><img alt="Example_full" src="_images/Example_full.png" /></p>
+<p><a class="reference external" href="https://raw.githubusercontent.com/skriptum/diatypst/refs/heads/main/example/example_full.pdf">Click here to go to the PDF</a></p>
+<p><a class="reference external" href="https://github.com/skriptum/diatypst/blob/main/example/example.typ">And here is the .typ file that produced this PDF</a></p>
 </section>
 </section>
 
@@ -332,23 +273,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="quarto.html">
+          <a class="next-page" href="guides/background.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Quarto</div>
+                <div class="title">How to use a black background?</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="reference.html">
+          <a class="prev-page" href="quarto.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Reference</div>
+                <div class="title">Quarto</div>
                 
               </div>
             </a>
@@ -389,13 +330,9 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Styling</a><ul>
-<li><a class="reference internal" href="#terms">Terms</a></li>
-<li><a class="reference internal" href="#code-blocks">Code Blocks</a></li>
-<li><a class="reference internal" href="#quotes">Quotes</a></li>
-<li><a class="reference internal" href="#tables">Tables</a></li>
-<li><a class="reference internal" href="#lists">Lists</a></li>
-<li><a class="reference internal" href="#reference-link">Reference / Link</a></li>
+<li><a class="reference internal" href="#">Example PDF</a><ul>
+<li><a class="reference internal" href="#normal-theme">Normal Theme</a></li>
+<li><a class="reference internal" href="#full-theme">Full Theme</a></li>
 </ul>
 </li>
 </ul>
