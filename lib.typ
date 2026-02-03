@@ -97,7 +97,7 @@
 
     #if count == "dot" {
     // DOT COUNTER -------------------------
-      
+
       set align(right + top)
       context {
         let last = counter(page).final().first()
@@ -160,7 +160,7 @@
         }
       }
     } else if count == "dot-section" {
-      
+
       // DOT SECTION COUNTER -------------------------
       v(-space / 1.5)
       set align(right + top)
@@ -170,7 +170,7 @@
 
         // Logic to find the current section
         let sections = query(heading.where(level: 1,))
-        let current_section_nr = counter(heading).get().at(0) 
+        let current_section_nr = counter(heading).get().at(0)
         let current_section_page = {
           if current_section_nr > 0 {
             sections.at(int(current_section_nr - 1)).location().page()
@@ -183,9 +183,9 @@
               ).location().page()
           } else {last}
         }
-    
+
         // Display the counter for all except last section
-        if next_section_page - current_section_page < 3  {  
+        if next_section_page - current_section_page < 3  {
           // For sections that only have 1 page leave the counter blank
           // NOTE: that it also dosnt show a counter if last section < 2 pages
         } else if current_section_nr < int(sections.len()) {
@@ -211,7 +211,7 @@
           link((page:next_section_page, x:0pt,y:0pt))[
             #h(0.1cm) #box(rotate(90deg)[#polygon.regular(
                 stroke: 1pt+fill-color, size: 0.2cm, vertices: 3,
-              )]) 
+              )])
           ]
         } else {
           // Current Section Dot
@@ -234,7 +234,7 @@
           }
         }
       }
-      
+
     } else if count == "number" {
     // NUMBER COUNTER -------------------------
       v(-space / 1.5)
@@ -247,7 +247,7 @@
         set text(fill: title-color) if theme == "normal"
         [#current / #last]
       }
-    } 
+    }
     ],
     header-ascent: 0%,
   // FOOTER ----------------------------------------------------
@@ -424,20 +424,25 @@
 
   // Link
   show ref: it => {
-    let el = it.element
-    set text(size: 0.7em, fill: white)
-    box(
-      fill: fill-color, outset: (x: 0.0em, y: 0.2em), 
-      radius: 0.8em,  height: 0.8em, inset: (x:0.5em),
-      //stroke: (bottom: fill-color),
-    )[
-      // if no supplement is passed
-      #if el.func() == heading and it.supplement == auto {
-        link(el.location(), el.body)
-      } else if el.func() == heading { // if a supplement is passed
-        link(el.location(), it.supplement.text)
-      }
-    ]
+    // Filter only for links, not for citations
+    if it.element != none {
+      let el = it.element
+      set text(size: 0.7em, fill: white)
+      box(
+        fill: fill-color, outset: (x: 0.0em, y: 0.2em),
+        radius: 0.8em,  height: 0.8em, inset: (x:0.5em),
+        //stroke: (bottom: fill-color),
+      )[
+        // if no supplement is passed
+        #if el.func() == heading and it.supplement == auto {
+          link(el.location(), el.body)
+        } else if el.func() == heading { // if a supplement is passed
+          link(el.location(), it.supplement.text)
+        }
+      ]
+    } else {
+      return it
+    }
   }
 
 
