@@ -5,7 +5,7 @@ For many presentations, it is quite useful to be able to control the appearance 
 To do that, you have to add your custom slide before calling `slides.with`. You need to also adjust the sizing of your custom slide to the ratio and layout you chose. 
 
 ```typst
-#import "@preview/diatypst:0.9.0": *
+#import "@preview/diatypst:0.9.1": *
 
 #set page(
   footer: none, header: none, margin: 0cm,
@@ -26,7 +26,7 @@ To do that, you have to add your custom slide before calling `slides.with`. You 
 If you just want to add your logo in the bottom and keep the default styling:
 
 ```typst
-#import "@preview/diatypst:0.9.0": *
+#import "@preview/diatypst:0.9.1": *
 
 #set page(
   footer: none, header: none, margin: 0cm,
@@ -72,7 +72,7 @@ The resulting first slide looks like this:
 You can also be creative in changing the layout of the first slide, for example:
 
 ```typst
-#import "@preview/diatypst:0.9.0": *
+#import "@preview/diatypst:0.9.1": *
 
 #set page(
   footer: none, header: none, margin: 0cm,
