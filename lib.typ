@@ -343,12 +343,11 @@
   // ADDITIONAL STYLING --------------------------------------------------
   // Terms
   show terms.item: it => {
-    set block(width: 100%, inset: 5pt)
     stack(
-      block(fill: header-color, radius: (top: 0.2em, bottom: 0cm), strong(it.term)),
-      block(fill: block-color, radius: (top: 0cm, bottom: 0.2em), it.description),
+      block(width: 100%, inset: 5pt, fill: header-color, radius: (top: 0.2em, bottom: 0cm), strong(it.term)),
+      block(width: 100%, inset: 5pt, fill: block-color, radius: (top: 0cm, bottom: 0.2em), it.description),
     )
-  }
+}
 
 
   // Code
