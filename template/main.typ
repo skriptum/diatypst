@@ -1,4 +1,4 @@
-#import "@preview/diatypst:0.9.1": *
+#import "@preview/diatypst:0.9.2": *
 
 #show: slides.with(
   title: "Diatypst", // Required
