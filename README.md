@@ -1,4 +1,4 @@
-![wide_dark](./screenshots/wide_dark.png)
+![Diatypst Logo (Dark)](./screenshots/wide_dark.png)
 
 # diatypst
 
@@ -24,11 +24,11 @@ Here is an example of a *diatypst* presentation
 
 | Title Slide                                     | Section                                             |
 | ----------------------------------------------- | --------------------------------------------------- |
-| ![Example-Title](screenshots/Example-Title.png) | ![Example-Section](screenshots/Example-Section.png) |
+| ![Default Title Slide](screenshots/Example-Title.png) | ![Default Section Slide](screenshots/Example-Section.png) |
 
 | Content (Normal Theme)                          | Content (Full Theme)                                        |
 | ----------------------------------------------- | ----------------------------------------------------------- |
-| ![Example-Slide](screenshots/Example-Slide.png) | ![Example-Full-Slide](./screenshots/Full-Example-Slide.png) |
+| ![A content slide with the Normal Theme applied](screenshots/Example-Slide.png) | ![A content slide with the Full Theme applied](./screenshots/Full-Example-Slide.png) |
 
 These example slides and a usage guide are available in the `example` Folder on GitHub as a [.typ file](https://github.com/skriptum/diatypst/blob/main/example/example.typ) and a compiled PDF ([normal Theme](https://raw.githubusercontent.com/skriptum/diatypst/refs/heads/main/example/example.pdf), [full Theme](https://raw.githubusercontent.com/skriptum/diatypst/refs/heads/main/example/example_full.pdf)). 
 
@@ -153,4 +153,4 @@ this template is inspired by [slydst](https://github.com/glambrechts/slydst), an
 
 The word *Diatypst* is inspired by the ease of use of a [**Dia**-projektor](https://de.wikipedia.org/wiki/Diaprojektor) (German for Slide Projector, left) and the [Diatype](https://en.wikipedia.org/wiki/Diatype_(machine)) (right)
 
-![explanation](./screenshots/explanation.png)
+![Diaprojektor and Diatype](./screenshots/explanation.png)
