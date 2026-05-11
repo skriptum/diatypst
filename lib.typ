@@ -31,7 +31,7 @@
   let width = ratio * height
 
   if count not in (none, "dot", "number", "dot-section") {
-    panic("Unknown Count, valid counts are 'dot' and 'number', or none")
+    panic("Unknown Count, valid counts are 'dot', 'dot-section' and 'number', or none")
   }
 
   if theme not in ("normal", "full") {
@@ -53,6 +53,7 @@
     author: authors,
   )
   set heading(numbering: "1.a")
+  let section_counter = counter("section")
 
   // PAGE----------------------------------------------
   set page(
@@ -170,7 +171,7 @@
 
         // Logic to find the current section
         let sections = query(heading.where(level: 1,))
-        let current_section_nr = counter(heading).get().at(0) 
+        let current_section_nr = section_counter.get().at(0) 
         let current_section_page = {
           if current_section_nr > 0 {
             sections.at(int(current_section_nr - 1)).location().page()
@@ -325,6 +326,7 @@
   // SLIDES STYLING --------------------------------------------------
   // Section Slides
   show heading.where(level: 1): x => {
+    section_counter.step()
     set page(header: none,footer: none, margin: 0cm)
     set align(horizon)
       grid(
