@@ -31,7 +31,7 @@
   let width = ratio * height
 
   if count not in (none, "dot", "number", "dot-section") {
-    panic("Unknown Count, valid counts are 'dot' and 'number', or none")
+    panic("Unknown Count, valid counts are 'dot', 'dot-section' and 'number', or none")
   }
 
   if theme not in ("normal", "full") {
