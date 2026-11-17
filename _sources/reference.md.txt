@@ -19,6 +19,8 @@ all available Options to initialize the template with
 | *footer-subtitle*| custom text in the footer subtitle (right)                | same as *subtitle*   |
 | *theme*       | slide theme, either "normal" or "full"                       | `"normal"`           |
 | *first-slide* | whether to include the default title slide                   | `true` |
+| *logo*        | path to a logo image, can be any image                       | `none` |
+| *institute*   | string or array of strings, adds an institute to the title slide | `none` |
 
 ## Count
 
