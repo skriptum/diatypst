@@ -3,6 +3,7 @@
 - Change all the version numbers from XX.OLD to XX.NEW
 - Run the example again 
   - First the full theme (rename to `example_full.pdf`)
+    - `typst compile example/example.typ --root=..` from the root folder
   - then the normal theme 
   - -> Commit
 - update the linked Example PDFs 

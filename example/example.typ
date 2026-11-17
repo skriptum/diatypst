@@ -12,7 +12,8 @@
   toc: true,
   count: "dot", // one of "dot", "dot-section", "number", or none
   footer: true,
-  theme: "normal"
+  theme: "normal", // one of "normal", "full"
+  logo: "example/icon.png", // path to a logo image
   // footer-title: "Custom Title",
   // footer-subtitle: "Custom Subtitle",
   // theme: "full", // one of "normal", "full"
@@ -35,14 +36,14 @@ Features:
 
 This short presentation is a showcase of the features and options of _diatypst_.
 
-Created with _diatypst_ v0.9.3, for the latest version and documentation, see the #link("https://mdwm.org/diatypst/")[diatypst guides].
+Created with _diatypst_ v0.10.0, for the latest version and documentation, see the #link("https://mdwm.org/diatypst/")[diatypst guides].
 
 == Usage
 
 To start a presentation, initialize it in your typst document:
 
 ```typst
-#import "@preview/diatypst:0.9.3": *
+#import "@preview/diatypst:0.10.0": *
 #show: slides.with(
   title: "Diatypst", // Required
   subtitle: "easy slides in typst",
@@ -88,6 +89,8 @@ Advanced Styling Options:
   [_toc_], [whether to display the table of contents], [`true`],
   [_theme_], [one of _normal, full_, adjusts the theme of the slide], [`"normal"`],
   [_first-slide_], [whether to include the default title slide], [`true`],
+  [_logo_], [path to a logo image, can be any image], [`none`],
+  [_institute_], [string or array of strings, adds an institute to the title slide], [`none`],
 )
 
 The full theme adds more styling to the slides, similar to a a full LaTeX beamer theme.

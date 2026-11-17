@@ -39,7 +39,7 @@ These example slides and a usage guide are available in the `example` Folder on 
 To start a presentation, initialize it in your typst document:
 
 ```typst
-#import "@preview/diatypst:0.9.3": *
+#import "@preview/diatypst:0.10.0": *
 #show: slides.with(
   title: "Diatypst", // Required
   subtitle: "easy slides in typst",
@@ -88,6 +88,8 @@ all available Options to initialize the template with
 | *footer-subtitle*| custom text in the footer subtitle (right)                | same as *subtitle*   |
 | *theme*       | slide theme, either "normal" or "full"                       | `"normal"`           |
 | *first-slide* | whether to include the default title slide                   | `true` |
+| *logo* | logo file to display on the first slide | `none` |
+| institute | Affiliation / context to display below author on title slide | `none` |
 
 Notes: 
 
@@ -104,10 +106,12 @@ diatypst also comes with some sensible default styling for common elements in pr
 
 For many presentations, it is quite useful to be able to control the appearance of the first slide. diatypst therefore has the option to disable the default title slide (`first-slide: false`) and allow users to create their own. This is a bit more complicated, but gives you more freedom to include logos etc.
 
+**Note:** if you only want to add a logo, use the `logo` option!
+
 To do that, you have to add your custom slide before calling `slides.with`. You need to also adjust the sizing of your custom slide to the ratio and layout you chose. 
 
 ```typst
-#import "@preview/diatypst:0.9.3": *
+#import "@preview/diatypst:0.10.0": *
 
 #set page(
   footer: none, header: none, margin: 0cm,
@@ -123,7 +127,7 @@ To do that, you have to add your custom slide before calling `slides.with`. You 
   ...
 ```
 
-
+A more thorough explanation with examples is in the [Docs](https://mdwm.org/diatypst/guides/first-slide.html).
 
 ## Quarto
 

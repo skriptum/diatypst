@@ -21,6 +21,8 @@
   footer: true,
   toc: true,
   theme: "normal",
+  logo: none,
+  institute: none,
 ) = {
 
   // Parsing
@@ -471,23 +473,39 @@
       authors = (authors,)
     }
     set page(footer: none, header: none, margin: 0cm)
+    // TItle block
     block(
-      inset: (x:0.5*space, y:1em),
-      fill: title-color,
-      width: 100%,
-      height: 60%,
-      align(bottom)[#text(2.0em, weight: "bold", fill: bg-color, title)]
-    )
-    block(
-      height: 30%,
-      width: 100%,
-      inset: (x:0.5*space,top:0cm, bottom: 1em),
-      if subtitle != none {[
-        #text(1.4em, fill: title-color, weight: "bold", subtitle)
-      ]} +
-      if subtitle != none and date != none { text(1.4em)[ \ ] } +
-      if date != none {text(1.1em, date)} +
-      align(left+bottom, authors.join(", ", last: " & "))
+          inset: 0.8cm,
+          fill: title-color,
+          width: 100%,
+          height: 60%,
+          below: 0%,
+          align(bottom)[
+            #text(2.0em, weight: "bold", fill: white)[Your Title]
+          ],
+        )
+    
+    // Lower block
+    grid(
+      columns: (2fr, height*0.4),
+      align: (left, right),
+      rows: 2,
+      // Subtitle
+      grid.cell(align: top, inset: (left:0.8cm, top: 0.5cm))[
+        #text(1.4em, fill: title-color, weight: "bold", subtitle)\
+        #text(1.2em,date) \
+      ],
+      // Logo
+      grid.cell(align: bottom, rowspan: 2, inset:(right:0.5cm),
+      if (logo != none){
+        image(logo, height: 40%, width: 80%,fit:"contain") // adjust width to change logo size
+      } else {block(height: 40%)} // Placeholder
+      ),
+      // Authors / Institutions
+      grid.cell(align: bottom, inset: (left:0.8cm, bottom: 0.5cm))[
+        #authors.join(", ", last: " & ") \
+        #text(0.8em, institute)
+      ]
     )
   }
 
