@@ -481,7 +481,7 @@
           height: 60%,
           below: 0%,
           align(bottom)[
-            #text(2.0em, weight: "bold", fill: white)[Your Title]
+            #text(2.0em, weight: "bold", fill: white)[#title]
           ],
         )
     

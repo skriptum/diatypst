@@ -36,14 +36,14 @@ Features:
 
 This short presentation is a showcase of the features and options of _diatypst_.
 
-Created with _diatypst_ v0.10.0, for the latest version and documentation, see the #link("https://mdwm.org/diatypst/")[diatypst guides].
+Created with _diatypst_ v0.10.1, for the latest version and documentation, see the #link("https://mdwm.org/diatypst/")[diatypst guides].
 
 == Usage
 
 To start a presentation, initialize it in your typst document:
 
 ```typst
-#import "@preview/diatypst:0.10.0": *
+#import "@preview/diatypst:0.10.1": *
 #show: slides.with(
   title: "Diatypst", // Required
   subtitle: "easy slides in typst",
