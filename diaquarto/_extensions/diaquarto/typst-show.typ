@@ -64,12 +64,12 @@ $endif$
 $if(counter)$
   count: "$counter$",
 $endif$
-$if(footer)$
+$for(footer)$ // use for for true/false values
   footer: $footer$,
-$endif$
-$if(toc)$
+$endfor$
+$for(toc)$ // use for for true/false values
   toc: $toc$,
-$endif$
+$endfor$
 $if(footer-title)$
   footer-title: "$footer-title$",
 $endif$
