@@ -1,14 +1,17 @@
 ---
 title: diaquarto 
 author: Author Name
+institute: University of typst
 date: "01.11.2024"
 subtitle: easy slides in typst
 toc: true
 format:
   diaquarto-typst: 
     layout: medium # small, medium, large
-    ratio: 16/9 # any ratio possible 
+    ratio: 4/3 # any ratio possible 
     title-color: "154C79" # Hex code for the title color (without #)
+    theme: normal
+    footer: false
 ---
 
 # About *diatypst*
@@ -23,7 +26,7 @@ quarto add skriptum/diatypst/diaquarto
 
 Then, create a qmd file with the following YAML frontmatter:
 
-```yaml
+```
 title: Untitled # required
 author: Author Name
 date: 01.07.2024

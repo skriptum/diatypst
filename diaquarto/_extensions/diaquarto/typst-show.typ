@@ -14,7 +14,19 @@
 
 #import "@preview/diatypst:0.10.1": slides
 
+// some logic to convert the date string into a typst datetime object
+$if(date)$
+#let date_raw = repr([$date$]).slice(1, -1)
+
+#let date_time = datetime(
+  year: int(date_raw.split("-").at(0)),
+  month: int(date_raw.split("-").at(1)),
+  day: int(date_raw.split("-").at(2)),
+)
+$endif$
+
 #show: slides.with(
+// Title etc
 $if(title)$
   title: [$title$],
 $endif$
@@ -22,11 +34,16 @@ $if(subtitle)$
   subtitle: [$subtitle$],
 $endif$
 $if(date)$
-  date: [$date$],
+  date: date_time.display("[day].[month].[year]"),
 $endif$
 $if(author)$
   authors: "$author$",
 $endif$
+$if(institute)$
+  institute: "$institute$",
+$endif$
+
+// Design
 $if(layout)$
   layout: "$layout$",
 $endif$
@@ -36,13 +53,31 @@ $endif$
 $if(title-color)$
   title-color: rgb("#$title-color$"),
 $endif$
+$if(bg-color)$
+  bg-color: rgb("#$bg-color$"),
+$endif$
+$if(theme)$
+  theme: "$theme$",
+$endif$
+
+// Slide content (Footer, Logo, Counter, TOC)
 $if(counter)$
   count: "$counter$",
 $endif$
-$for(footer)$
+$if(footer)$
   footer: $footer$,
-$endfor$
-$for(toc)$
+$endif$
+$if(toc)$
   toc: $toc$,
-$endfor$
+$endif$
+$if(footer-title)$
+  footer-title: "$footer-title$",
+$endif$
+$if(footer-subtitle)$
+  footer-subtitle: "$footer-subtitle$",
+$endif$
+$if(logo)$
+  logo: "$logo$",
+$endif$
+
 )
