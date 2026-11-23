@@ -7,7 +7,7 @@
         <link rel="canonical" href="https://mdwm.org/diatypst/quarto.html">
 
     <!-- Generated with Sphinx 8.2.3 and Furo 2025.09.25 -->
-        <title>Quarto - diatypst</title>
+        <title>Quarto Presentations - diatypst</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=580074bf" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
@@ -199,7 +199,7 @@
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="styling.html">Styling</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Quarto</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Quarto Presentations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="example.html">Example PDF</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">FAQ</span></p>
@@ -249,13 +249,15 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="quarto">
-<h1>Quarto<a class="headerlink" href="#quarto" title="Link to this heading">¶</a></h1>
-<p>This template is also available as a <a class="reference external" href="https://quarto.org/">Quarto</a> extension. To use it, add it to your project with the following command:</p>
+          <section id="quarto-presentations">
+<h1>Quarto Presentations<a class="headerlink" href="#quarto-presentations" title="Link to this heading">¶</a></h1>
+<p><a class="reference external" href="https://quarto.org/">Quarto</a> is a publishing system built on top of pandoc, that allows you to create documents (and presentations!) from a markdown file. For their basic presentation format, they use beamer. To replace it with diatypst, you can use the <em>diaquarto</em> extension. This allows you to use the same options as in the typst version, but with a simpler workflow (and from markdown).</p>
+<p>To use it, add it to your project with the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>quarto<span class="w"> </span>add<span class="w"> </span>skriptum/diatypst/diaquarto
 </pre></div>
 </div>
-<p>Then, create a qmd file with the following YAML frontmatter:</p>
+<p>This will install the extension in your project. You can then use it in your qmd files.</p>
+<p>In your markdown file, add the following YAML frontmatter:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Untitled&quot;</span>
 <span class="nn">...</span>
 <span class="nt">format</span><span class="p">:</span>
@@ -265,7 +267,8 @@
 <span class="w">    </span><span class="nt">title-color</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;013220&quot;</span><span class="w"> </span><span class="c1"># Any Hex code for the title color (without #)</span>
 </pre></div>
 </div>
-<p>Only some of the options from the typst version are available in the quarto version, more will be added.</p>
+<p>Rendering this should create a beatiful presentation with the same styling as the typst version.</p>
+<p>You can use any of the options available in the typst version, e.g. <code class="docutils literal notranslate"><span class="pre">toc:</span> <span class="pre">true</span></code> to add a table of contents, or <code class="docutils literal notranslate"><span class="pre">footer:</span> <span class="pre">false</span></code> to remove the footer.</p>
 </section>
 
         </article>
