@@ -1,6 +1,6 @@
 # Diaquarto: Diatypst Extension for Quarto
 
-*easy slides in quarto/typst*
+*easy slides with  quarto+typst*
 
 Features:
 
@@ -14,7 +14,7 @@ Example Presentation
 
 | Title Slide                                     | Section                                             | Content                                         | Outline                                         |
 | ----------------------------------------------- | --------------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
-| ![Example-Title](../screenshots/Example-Title.jpg) | ![Example-Section](../screenshots/Example-Section.jpg) | ![Example-Slide](../screenshots/Example-Slide.jpg) | ![Example-Section](../screenshots/Example-TOC.jpg) |
+| ![Example-Title](../screenshots/Example-Title.png) | ![Example-Section](../screenshots/Example-Section.png) | ![Example-Slide](../screenshots/Example-Slide.png) | ![Example-Section](../screenshots/Example-TOC.png) |
 
 To use this extension, download it to your project directory with the following command:
 
@@ -34,6 +34,7 @@ format:
     layout: medium # small, medium, large
     ratio: 16/9 # any ratio possible 
     title-color: "013220" # Hex code for the title color (without #)
+    ... # any option from diatypst you would like to use, toc: true, ...
 ```
 
 Now you can easily create slides with 
@@ -43,8 +44,6 @@ Now you can easily create slides with
 - or a `---` for a new slide
 
 The slides will be rendered in the specified layout and ratio.
-
-
 
 This Format also offers styling adjusted to the title color, e.g in code blocks, terms and bullet lists. To create a Term, use the pandoc term code:
 

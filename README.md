@@ -131,7 +131,7 @@ A more thorough explanation with examples is in the [Docs](https://mdwm.org/diat
 
 ## Quarto
 
-This template is also available as a [Quarto](https://quarto.org/) extension. To use it, add it to your project with the following command:
+This template is also available as a [Quarto](https://quarto.org/) extension, for an easy alternative to the beamer presentation. To use it, add it to your project with the following command:
 
 ```bash
 quarto add skriptum/diatypst/diaquarto
@@ -149,7 +149,7 @@ format:
     title-color: "013220" # Any Hex code for the title color (without #)
 ```
 
-Only some of the options from the typst version are available in the quarto version, more will be added.
+All of the options available in the Typst template are also available in the Quarto extension. For a deeper dive of the Quarto extension, see the [Docs on Quarto](https://mdwm.org/diatypst/quarto.html).
 
 ## Inspiration
 
