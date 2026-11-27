@@ -82,6 +82,8 @@ all available Options to initialize the template with
 | *title-color* | Color to base the Elements of the Presentation on            | `blue.darken(50%)`   |
 | *bg-color*    | Background color of the slides, can be any color             | `white`              |
 | *count*       | page counter style, either "dot", "number", "dot-section", or `none` | `"dot"`              |
+| *heading-numbering* | numbering of headings in toc | "1.a" |
+| *slide-numbering* | numbering of continuation slides | "(i)" |
 | *footer*      | whether to display the footer at the bottom                  | `true`               |
 | *toc*         | whether to display the table of contents                     | `true`               |
 | *footer-title*| custom text in the footer title (left)                       | same as *title*      |

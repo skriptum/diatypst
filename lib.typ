@@ -18,6 +18,8 @@
   first-slide: true,
   bg-color: white,
   count: "dot",
+  heading-numbering: "1.a",
+  slide-numbering: "(i)",
   footer: true,
   toc: true,
   theme: "normal",
@@ -54,7 +56,7 @@
     title: title,
     author: authors,
   )
-  set heading(numbering: "1.a")
+  set heading(numbering: heading-numbering)
   let section_counter = counter("section")
 
   // PAGE----------------------------------------------
@@ -83,7 +85,7 @@
               #v(space / 2)
               #heading.body
               #if not heading.location().page() == page [
-                #{numbering("(i)", page - heading.location().page() + 1)}
+                #{numbering(slide-numbering, page - heading.location().page() + 1)}
               ]
             ]
           } else if (theme == "normal") {
@@ -91,7 +93,7 @@
             v(space / 2)
             heading.body
             if not heading.location().page() == page [
-              #{numbering("(i)", page - heading.location().page() + 1)}
+              #{numbering(slide-numbering, page - heading.location().page() + 1)}
             ]
           }
         }
